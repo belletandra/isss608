@@ -1,0 +1,17 @@
+---
+title: "Hands-On Exercise 1"
+format: html
+edtior: visual
+date: "2026-04-15"
+date-modified: "2026-04-15"
+---
+
+This is a hands on exercise exploration.
+```{r}
+pacman::p_load(tidyverse)
+```
+```{r, message=FALSE, warning=FALSE}
+exam_data <- read_csv("Exam_data.csv")
+```
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
