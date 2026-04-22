@@ -4,5 +4,17 @@
   },
   "about.qmd": {
     "about.html": "f47a0513"
+  },
+  "hands-on-1.qmd": {
+    "hands-on-1.html": "8c65da2e"
+  },
+  "handson/exercise1.qmd": {
+    "exercise1.html": "844c3b72"
+  },
+  "exercise2.qmd": {
+    "exercise2.html": "338420ef"
+  },
+  "handson/exercise2.qmd": {
+    "exercise2.html": "61abff2d"
   }
 }

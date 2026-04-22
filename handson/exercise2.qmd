@@ -1,0 +1,39 @@
+---
+title: "Hands-On Exercise2"
+format: html
+editor: visual
+author: "Anabelle Eveleen T"
+date: "2026-04-15"
+date-modified: "last-modified"
+---
+
+This is a hands on exercise 2 exploration.
+
+In this exercise, ggrepel, ggthemes, hrbrthemes and patchwork will be used for exploration.
+```{r}
+install.packages("remotes")
+remotes::install_github("hrbrmstr/hrbrthemes")
+pacman::p_load(ggrepel, patchwork, 
+               ggthemes, hrbrthemes,
+               tidyverse) 
+```
+Now, we will read the data
+```{r}
+exam_data <- read_csv("../data/Exam_data.csv")
+```
+## ggrepel
+ggrepel is an extension of ggplot2 package which provides geoms for ggplot2 to repel overlapping text as in our examples on the right.
+```{r}
+ggplot(data=exam_data, 
+       aes(x= MATHS, 
+           y=ENGLISH)) +
+  geom_point() +
+  geom_smooth(method=lm, 
+              size=0.5) +  
+  geom_label(aes(label = ID), 
+             hjust = .5, 
+             vjust = -.5) +
+  coord_cartesian(xlim=c(0,100),
+                  ylim=c(0,100)) +
+  ggtitle("English scores versus Maths scores for Primary 3")
+```
