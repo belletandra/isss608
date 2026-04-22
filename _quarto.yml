@@ -2,22 +2,39 @@ project:
   type: website
 
 website:
+  title: "ISSS608 Coursework Website"
   navbar:
-    background: primary
-    search: true
     left:
       - text: "Home"
         href: index.qmd
-      - talks.qmd
-      - about.qmd 
-
+      - text: "Hands-on"
+        menu:
+          - text: "Exercise 1"
+            href: handson/exercise1.qmd
+          - text: "Exercise 2"
+            href: handson/exercise2.qmd
+          - text: "Exercise 3"
+            href: handson/hands-on-3.qmd
+          - text: "Exercise 4"
+            href: handson/hands-on-4.qmd
+            # … repeat up to 10
+      - text: "In-class"
+        menu:
+          - text: "Exercise 1"
+            href: inclass/in-class-1.qmd
+          - text: "Exercise 2"
+            href: inclass/in-class-2.qmd
+          # … repeat up to 10
+      - text: "Take-home"
+        menu:
+          - text: "Exercise 1"
+            href: takehome/take-home-1.qmd
+          - text: "Exercise 2"
+            href: takehome/take-home-2.qmd
+          - text: "Exercise 3"
+            href: takehome/take-home-3.qmd
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: cosmo
     toc: true
-
-editor: visual
-
+    
