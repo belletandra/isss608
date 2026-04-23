@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "index.html#quarto",
-    "href": "index.html#quarto",
-    "title": "Home",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "index.html#running-code",
-    "href": "index.html#running-code",
-    "title": "Home",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -28,39 +7,11 @@
     "text": "About this site"
   },
   {
-    "objectID": "hands-on-1.html",
-    "href": "hands-on-1.html",
-    "title": "Hands-On Exercise 1",
-    "section": "",
-    "text": "This is a hands on exercise exploration.\npacman::p_load(tidyverse)\nexam_data &lt;- read_csv(\"Exam_data.csv\")\n\nRows: 322 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): ID, CLASS, GENDER, RACE\ndbl (3): ENGLISH, MATHS, SCIENCE\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
-  },
-  {
-    "objectID": "hands-on-1.html#histogram-of-exam-data",
-    "href": "hands-on-1.html#histogram-of-exam-data",
-    "title": "Hands-On Exercise 1",
-    "section": "Histogram of Exam Data",
-    "text": "Histogram of Exam Data\nFirst, we compare exam data using a histogram\n\nhist(exam_data$MATHS)"
-  },
-  {
-    "objectID": "hands-on-1.html#ggplot-objects",
-    "href": "hands-on-1.html#ggplot-objects",
-    "title": "Hands-On Exercise 1",
-    "section": "ggplot objects",
-    "text": "ggplot objects\n\nggplot(data=exam_data)\n\n\n\n\n\n\n\n\nelement into the plot\n\nggplot(data=exam_data, \n       aes(x= MATHS))\n\n\n\n\n\n\n\n\n\ngeometric objects:\ngeom_bar\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar()\n\n\n\n\n\n\n\n\ngeom_dotplot\n\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_dotplot(dotsize = 0.5)\n\nBin width defaults to 1/30 of the range of the data. Pick better value with\n`binwidth`.\n\n\n\n\n\n\n\n\n\ngeom_histogram\n\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_histogram()       \n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\nwe can modify the geometric object by changing geom()\n\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20,            \n                 color=\"black\",      \n                 fill=\"light blue\")  \n\n\n\n\n\n\n\n\nmodify by changing aes()\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           fill = GENDER)) +\n  geom_histogram(bins=20, \n                 color=\"grey30\")\n\n\n\n\n\n\n\n\ngeom_density()\n\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_density()\n\n\n\n\n\n\n\n\nplotting 2 kernel density lines by using color\n\nggplot(data=exam_data, \n       aes(x = MATHS, \n           colour = GENDER)) +\n  geom_density()\n\n\n\n\n\n\n\n\ngeom_boxplot\n\nggplot(data=exam_data, \n       aes(y = MATHS,       \n           x= GENDER)) +    \n  geom_boxplot()            \n\n\n\n\n\n\n\n\nnotched plot\n\nggplot(data=exam_data, \n       aes(y = MATHS, \n           x= GENDER)) +\n  geom_boxplot(notch=TRUE)\n\n\n\n\n\n\n\n\ngeom_violin()\n\nggplot(data=exam_data, \n       aes(y = MATHS, \n           x= GENDER)) +\n  geom_violin()\n\n\n\n\n\n\n\n\ngeom_point()\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point()            \n\n\n\n\n\n\n\n\ncombination of geom objects\n\nggplot(data=exam_data, \n       aes(y = MATHS, \n           x= GENDER)) +\n  geom_boxplot() +                    \n  geom_point(position=\"jitter\", \n             size = 0.5)"
-  },
-  {
-    "objectID": "hands-on-1.html#statistic-function",
-    "href": "hands-on-1.html#statistic-function",
-    "title": "Hands-On Exercise 1",
-    "section": "statistic function",
-    "text": "statistic function\n\nstat()\nstat_summary()\n\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot() +\n  stat_summary(geom = \"point\",       \n               fun = \"mean\",         \n               colour =\"red\",        \n               size=4)               \n\n\n\n\n\n\n\n\ncombine geom() and stat()\n\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot() +\n  geom_point(stat=\"summary\",        \n             fun=\"mean\",           \n             colour=\"red\",          \n             size=4)          \n\n\n\n\n\n\n\n\nhow to add best fit curve on a scatterplot\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              linewidth=0.5)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nfacets\nfacet_wrap()\n\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20) +\n    facet_wrap(~ CLASS)\n\n\n\n\n\n\n\n\nfacet_grid()\n\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20) +\n    facet_grid(~ CLASS)\n\n\n\n\n\n\n\n\n\n\ncoordinates\nvertical coordinate\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nusing coord_flip()\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip()\n\n\n\n\n\n\n\n\nchanging the x and y axis range\n\nggplot(data=exam_data, \n       aes(x= MATHS, y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, size=0.5)\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(x= MATHS, y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              size=0.5) +  \n  coord_cartesian(xlim=c(0,100),\n                  ylim=c(0,100))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nthemes\nbar chart using gray color\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_gray()\n\n\n\n\n\n\n\n\nusing theme_classic()\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_classic()\n\n\n\n\n\n\n\n\nusing theme_minimal()\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_minimal()"
-  },
-  {
     "objectID": "handson/exercise1.html",
     "href": "handson/exercise1.html",
     "title": "Hands-On Exercise 1",
     "section": "",
-    "text": "This is a hands on exercise exploration.\npacman::p_load(tidyverse)\nexam_data &lt;- read_csv(\"../data/Exam_data.csv\")\n\nRows: 322 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): ID, CLASS, GENDER, RACE\ndbl (3): ENGLISH, MATHS, SCIENCE\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "This is a hands on exercise 1 exploration.\npacman::p_load(tidyverse)\nexam_data &lt;- read_csv(\"../data/Exam_data.csv\")\n\nRows: 322 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): ID, CLASS, GENDER, RACE\ndbl (3): ENGLISH, MATHS, SCIENCE\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
   },
   {
     "objectID": "handson/exercise1.html#histogram-of-exam-data",
@@ -84,17 +35,66 @@
     "text": "statistic function\n\nstat()\nstat_summary()\n\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot() +\n  stat_summary(geom = \"point\",       \n               fun = \"mean\",         \n               colour =\"red\",        \n               size=4)               \n\n\n\n\n\n\n\n\ncombine geom() and stat()\n\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot() +\n  geom_point(stat=\"summary\",        \n             fun=\"mean\",           \n             colour=\"red\",          \n             size=4)          \n\n\n\n\n\n\n\n\nhow to add best fit curve on a scatterplot\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              linewidth=0.5)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nfacets\nfacet_wrap()\n\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20) +\n    facet_wrap(~ CLASS)\n\n\n\n\n\n\n\n\nfacet_grid()\n\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20) +\n    facet_grid(~ CLASS)\n\n\n\n\n\n\n\n\n\n\ncoordinates\nvertical coordinate\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nusing coord_flip()\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip()\n\n\n\n\n\n\n\n\nchanging the x and y axis range\n\nggplot(data=exam_data, \n       aes(x= MATHS, y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, size=0.5)\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(x= MATHS, y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              size=0.5) +  \n  coord_cartesian(xlim=c(0,100),\n                  ylim=c(0,100))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nthemes\nbar chart using gray color\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_gray()\n\n\n\n\n\n\n\n\nusing theme_classic()\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_classic()\n\n\n\n\n\n\n\n\nusing theme_minimal()\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_minimal()"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This website is my coursework portfolio for ISSS608: Visual Analytics and Applications. It showcases my learning journey through Hands‑on Exercises, In‑class Exercises, and Take‑home Exercises."
+  },
+  {
+    "objectID": "index.html#welcome-to-my-isss608-portfolio",
+    "href": "index.html#welcome-to-my-isss608-portfolio",
+    "title": "Home",
+    "section": "",
+    "text": "This website is my coursework portfolio for ISSS608: Visual Analytics and Applications. It showcases my learning journey through Hands‑on Exercises, In‑class Exercises, and Take‑home Exercises."
+  },
+  {
+    "objectID": "index.html#motivation",
+    "href": "index.html#motivation",
+    "title": "Home",
+    "section": "Motivation",
+    "text": "Motivation\nTo me, data tells a story, I believe that data becomes meaningful when it is visualized effectively. Through this course, I aim to strengthen my ability to transform raw data into clear, insightful visuals that support better decision‑making."
+  },
+  {
+    "objectID": "index.html#coursework-overview",
+    "href": "index.html#coursework-overview",
+    "title": "Home",
+    "section": "Coursework Overview",
+    "text": "Coursework Overview\n\nHands‑on Exercises: Step‑by‑step practice sessions to apply new concepts done before every week’s lecture\nIn‑class Exercises: Activities done during weekly lecture to reinforce learning.\n\nTake‑home Exercises:"
+  },
+  {
+    "objectID": "index.html#looking-ahead",
+    "href": "index.html#looking-ahead",
+    "title": "Home",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nBy the end of this course, I hope to build a strong foundation in visual analytics and apply these skills to real‑world datasets. This portfolio will serve as both a record of my progress and a resource for future projects."
+  },
+  {
     "objectID": "handson/exercise2.html",
     "href": "handson/exercise2.html",
     "title": "Hands-On Exercise2",
     "section": "",
-    "text": "This is a hands on exercise 2 exploration.\nIn this exercise, ggrepel, ggthemes, hrbrthemes and patchwork will be used for exploration.\npacman::p_load(ggrepel, patchwork, \n               ggthemes, hrbrthemes,\n               tidyverse) \n\nWarning in download.file(url, destfile, method, mode = \"wb\", ...): downloaded\nlength 0 != reported length 0\n\n\nWarning in download.file(url, destfile, method, mode = \"wb\", ...): cannot open\nURL\n'http://cran.rstudio.com/bin/macosx/big-sur-arm64/contrib/4.3/hrbrthemes_0.8.7.tgz':\nHTTP status was '404 Not Found'\n\n\nError in download.file(url, destfile, method, mode = \"wb\", ...) : \n  cannot open URL 'http://cran.rstudio.com/bin/macosx/big-sur-arm64/contrib/4.3/hrbrthemes_0.8.7.tgz'\n\n\nWarning in download.packages(pkgs, destdir = tmpd, available = available, :\ndownload of package 'hrbrthemes' failed\n\n\nWarning in p_install(package, character.only = TRUE, ...):\n\n\nWarning in library(package, lib.loc = lib.loc, character.only = TRUE,\nlogical.return = TRUE, : there is no package called 'hrbrthemes'\n\n\nWarning in pacman::p_load(ggrepel, patchwork, ggthemes, hrbrthemes, tidyverse): Failed to install/load:\nhrbrthemes\nNow, we will read the data\nexam_data &lt;- read_csv(\"../data/Exam_data.csv\")\n\nRows: 322 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (4): ID, CLASS, GENDER, RACE\ndbl (3): ENGLISH, MATHS, SCIENCE\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "This is a hands on exercise 2 exploration.\nIn this exercise, ggrepel, ggthemes, hrbrthemes and patchwork will be used for exploration.\npacman::p_load(ggrepel, patchwork, \n               ggthemes, hrbrthemes,\n               tidyverse)\nWe will import the data now\nexam_data &lt;- read_csv(\"../data/Exam_data.csv\", show_col_types = FALSE)"
   },
   {
     "objectID": "handson/exercise2.html#ggrepel",
     "href": "handson/exercise2.html#ggrepel",
     "title": "Hands-On Exercise2",
     "section": "ggrepel",
-    "text": "ggrepel"
+    "text": "ggrepel\nThis pacakage is an extension of ggplot2 which provides geoms for ggplot2 to repel overlapping text.\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              size=0.5) +  \n  geom_label(aes(label = ID), \n             hjust = .5, \n             vjust = -.5) +\n  coord_cartesian(xlim=c(0,100),\n                  ylim=c(0,100)) +\n  ggtitle(\"English scores versus Maths scores for Primary 3\")\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nHere’s another example of using ggrepel\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              size=0.5) +  \n  geom_label_repel(aes(label = ID), \n                   fontface = \"bold\") +\n  coord_cartesian(xlim=c(0,100),\n                  ylim=c(0,100)) +\n  ggtitle(\"English scores versus Maths scores for Primary 3\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: ggrepel: 317 unlabeled data points (too many overlaps). Consider\nincreasing max.overlaps"
+  },
+  {
+    "objectID": "handson/exercise2.html#ggthemes",
+    "href": "handson/exercise2.html#ggthemes",
+    "title": "Hands-On Exercise2",
+    "section": "ggthemes",
+    "text": "ggthemes\nggplot2 comes with eight built-in themes. The themes are: theme_gray(), theme_bw(), theme_classic(), theme_dark(), theme_light(), theme_linedraw(), theme_minimal(), and theme_void().\n\nggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  theme_gray() +\n  ggtitle(\"Distribution of Maths scores\") \n\n\n\n\n\n\n\n\n\nggtheme package: The Economist theme\n\nggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  ggtitle(\"Distribution of Maths scores\") +\n  theme_economist()\n\n\n\n\n\n\n\n\n\n\nggtheme package: hrbthems\nThis package provides a base theme that focuses on typographic elements, including where various labels are placed as well as the fonts that are used.\n\nggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  ggtitle(\"Distribution of Maths scores\") +\n  theme_ipsum()\n\n\n\n\n\n\n\n\nUtilizing the elements of axis_title_size, base_size and grid to modify the above plot.\n\nggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  ggtitle(\"Distribution of Maths scores\") +\n  theme_ipsum(axis_title_size = 18,\n              base_size = 15,\n              grid = \"Y\")"
+  },
+  {
+    "objectID": "handson/exercise2.html#creating-composite-graphics-pathwork-methods",
+    "href": "handson/exercise2.html#creating-composite-graphics-pathwork-methods",
+    "title": "Hands-On Exercise2",
+    "section": "Creating Composite Graphics: pathwork methods",
+    "text": "Creating Composite Graphics: pathwork methods\nWhile several ggplot2 extensions—such as gridExtra::grid.arrange() and cowplot::plot_grid()—allow you to combine multiple graphs, the patchwork package offers an intuitive approach. Specifically built for the ggplot2 ecosystem, patchwork simplifies the creation of complex layouts using a syntax that feels like writing a simple equation. General syntax of patchwork are: The Plus Sign (+): Used to place plots side-by-side in a two-column layout. Parentheses (): Used to group subplots together, allowing you to treat multiple graphs as a single unit within a larger layout. The Division Sign (/): Used to stack plots vertically in a two-row layout.\n\nCombining two ggplot2 graphs\nFirst, we create each single graph naming it p1, p2, p3\n\np1 &lt;- ggplot(data=exam_data, \n             aes(x = MATHS)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") + \n  coord_cartesian(xlim=c(0,100)) +\n  ggtitle(\"Distribution of Maths scores\")\np2 &lt;- ggplot(data=exam_data, \n             aes(x = ENGLISH)) +\n  geom_histogram(bins=20, \n                 boundary = 100,\n                 color=\"grey25\", \n                 fill=\"grey90\") +\n  coord_cartesian(xlim=c(0,100)) +\n  ggtitle(\"Distribution of English scores\")\np3 &lt;- ggplot(data=exam_data, \n             aes(x= MATHS, \n                 y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              size=0.5) +  \n  coord_cartesian(xlim=c(0,100),\n                  ylim=c(0,100)) +\n  ggtitle(\"English scores versus Maths scores for Primary 3\")\n\nAfter creating the graphs, we can utilize th simple patchwork syntax to create a composite of two histograms\n\np1 + p2\n\n\n\n\n\n\n\n\n\n\nCombining three ggplot2 graphs\nWe aren’t just limited to two grids, we can plot more complex composite using the below syntax: The Slash Sign (/): Places plots on top of one another (vertical stacking) The Horizontal Slash (|): Places plots side-by-side (horizontal stacking) The Parentheses (()): Acts just like the normal parentheses, dictating the order of operations so we can nest complex layouts within a single structure.\n\n(p1 / p2) | p3\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nCreating a composite figure with tag\nPatchwork also provides an auto-tagging function to identify subplots in text.\n\n((p1 / p2) | p3) + \n  plot_annotation(tag_levels = 'I')\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nCreating figure with insert\nPatchwork offers the inset_element() function.We can define the exact boundaries of your inset using a coordinate system from 0 to 1.\n\np3 + inset_element(p2, \n                   left = 0.02, \n                   bottom = 0.7, \n                   right = 0.5, \n                   top = 1)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\nCreating a composite figure by using patchwork and ggtheme\nWe can combine ggthemes and patchwork. Here’s an example of a patchwork function and theme_economist()\n\npatchwork &lt;- (p1 / p2) | p3\npatchwork & theme_economist()\n\n`geom_smooth()` using formula = 'y ~ x'"
   }
 ]

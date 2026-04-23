@@ -1,7 +1,23 @@
 ---
-title: "Home"
+title : "Home"
 format: html
 editor: visual
 ---
 
 ## Welcome to my ISSS608 Portfolio
+
+This website is my coursework portfolio for ISSS608: Visual Analytics and Applications. It showcases my learning journey through Hands‑on Exercises, In‑class Exercises, and Take‑home Exercises.
+
+## Motivation
+
+To me, data tells a story, I believe that data becomes meaningful when it is visualized effectively. Through this course, I aim to strengthen my ability to transform raw data into clear, insightful visuals that support better decision‑making.
+
+## Coursework Overview
+
+-   **Hands‑on Exercises**: Step‑by‑step practice sessions to apply new concepts done before every week's lecture
+-   **In‑class Exercises**: Activities done during weekly lecture to reinforce learning.\
+-   **Take‑home Exercises**:
+
+## Looking Ahead
+
+By the end of this course, I hope to build a strong foundation in visual analytics and apply these skills to real‑world datasets. This portfolio will serve as both a record of my progress and a resource for future projects.
