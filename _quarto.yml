@@ -14,10 +14,10 @@ website:
           - text: "Exercise 2"
             href: handson/exercise2.qmd
           - text: "Exercise 3"
-            href: handson/hands-on-3.qmd
+            href: handson/exercise3.qmd
           - text: "Exercise 4"
-            href: handson/hands-on-4.qmd
-            # … repeat up to 10
+            href: handson/exercise4.qmd
+          
       - text: "In-class"
         menu:
           - text: "Exercise 1"
@@ -37,4 +37,5 @@ format:
   html:
     theme: cosmo
     toc: true
+    number-sections: true
     

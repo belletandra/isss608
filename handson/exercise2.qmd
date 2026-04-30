@@ -3,7 +3,7 @@ title: "Hands-On Exercise2"
 format: html
 editor: visual
 author: "Anabelle Eveleen T"
-date: "2026-04-15"
+date: "2026-04-22"
 date-modified: "last-modified"
 ---
 
@@ -118,7 +118,13 @@ ggplot(data=exam_data,
 
 ## Creating Composite Graphics: pathwork methods
 
-While several ggplot2 extensions---such as gridExtra::grid.arrange() and cowplot::plot_grid()---allow you to combine multiple graphs, the patchwork package offers an intuitive approach. Specifically built for the ggplot2 ecosystem, patchwork simplifies the creation of complex layouts using a syntax that feels like writing a simple equation. General syntax of patchwork are: The Plus Sign (+): Used to place plots side-by-side in a two-column layout. Parentheses (): Used to group subplots together, allowing you to treat multiple graphs as a single unit within a larger layout. The Division Sign (/): Used to stack plots vertically in a two-row layout.
+While several ggplot2 extensions---such as gridExtra::grid.arrange() and cowplot::plot_grid()---allow you to combine multiple graphs, the patchwork package offers an intuitive approach. Specifically built for the ggplot2 ecosystem, patchwork simplifies the creation of complex layouts using a syntax that feels like writing a simple equation. General syntax of patchwork are: 
+
+The Plus Sign (+): Used to place plots side-by-side in a two-column layout. 
+
+Parentheses (): Used to group subplots together, allowing you to treat multiple graphs as a single unit within a larger layout. 
+
+The Division Sign (/): Used to stack plots vertically in a two-row layout.
 
 ### Combining two ggplot2 graphs
 
@@ -160,7 +166,13 @@ p1 + p2
 
 ### Combining three ggplot2 graphs
 
-We aren't just limited to two grids, we can plot more complex composite using the below syntax: The Slash Sign (/): Places plots on top of one another (vertical stacking) The Horizontal Slash (\|): Places plots side-by-side (horizontal stacking) The Parentheses (()): Acts just like the normal parentheses, dictating the order of operations so we can nest complex layouts within a single structure.
+We aren't just limited to two grids, we can plot more complex composite using the below syntax: 
+
+- The Slash Sign (/): Places plots on top of one another (vertical stacking) 
+
+- The Horizontal Slash (\|): Places plots side-by-side (horizontal stacking) 
+
+- The Parentheses (()): Acts just like the normal parentheses, dictating the order of operations so we can nest complex layouts within a single structure.
 
 ```{r}
 (p1 / p2) | p3
