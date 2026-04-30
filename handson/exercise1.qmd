@@ -5,6 +5,11 @@ author: "Anabelle Eveleen T"
 edtior: visual
 date: "2026-04-15"
 date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  freeze: true
 ---
 
 This is a hands on exercise 1 exploration.
