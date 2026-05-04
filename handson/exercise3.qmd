@@ -27,7 +27,7 @@ We will import the data now
 exam_data <- read_csv("../data/Exam_data.csv", show_col_types = FALSE)
 ```
 
-## Interactice Data Visualisation - ggiraph
+## Interavtice Data Visualisation - ggiraph
 ggiraph is an htmlwidget and an extension of ggplot2.This package allows to make ggplot interactive. Interactive is made with ggplot geometries that can understand three arguments:
 
 1. **tooltip**: a dataset column that provides text to display when the user hovers over chart elements
@@ -444,47 +444,197 @@ DT::datatable(exam_data, class= "compact")
 
 ### Linked brushing using Crosstalk Method
 
-::: {.panel-tabset}
-
-### The plot
-```{r,echo=FALSE}
-d <- highlight_key(exam_data) 
-p <- ggplot(d, 
-            aes(ENGLISH, 
-                MATHS)) + 
-  geom_point(size=1) +
-  coord_cartesian(xlim=c(0,100),
-                  ylim=c(0,100))
-
-gg <- highlight(ggplotly(p),        
-                "plotly_selected")  
-
-crosstalk::bscols(gg,               
-                  DT::datatable(d), 
-                  widths = 5)        
-```
-
-### The code chunk
-
-```r
-d <- highlight_key(exam_data) 
-p <- ggplot(d, 
-            aes(ENGLISH, 
-                MATHS)) + 
-  geom_point(size=1) +
-  coord_cartesian(xlim=c(0,100),
-                  ylim=c(0,100))
-
-gg <- highlight(ggplotly(p),        
-                "plotly_selected")  
-
-crosstalk::bscols(gg,               
-                  DT::datatable(d), 
-                  widths = 5)        
-```
+v
 Key takeaway from this method:
 
 1. The highlight() function from the plotly package configures options for brushing (highlighting) across multiple plots. These options are mainly intended for linking multiple Plotly graphs, and behavior may vary when linking Plotly with other htmlwidget packages via crosstalk. In some cases, other widgets (e.g., leaflet) will respect these settings, such as persistent selection.
 
 2. The bscols() helper from the crosstalk package makes it easy to arrange HTML elements side by side. While it can be called directly from the console, it is especially useful in R Markdown documents. Note that using bscols() will load all of Bootstrap.
 :::
+
+Now, we move on to the second part of the exercise. Programming Animated Statistical Graphics with R
+
+## Overview of Programming Animated Statistical Graphics
+
+When presenting a visually‑driven data story, animation often captures the audience’s attention more effectively than static graphics and leaves a stronger impression. We will explore how to build animated visualizations using the `gganimate` and `plotly` packages. Along the way, we will also practice reshaping data with `tidyr` and performing data processing, wrangling, and transformations with `dplyr`.
+
+### Basic Concepts of Animation
+An animation isn’t a single plot that moves. Instead, it’s a sequence of individual plots assembled into frames, much like a flip book or traditional cartoon. Each frame represents a subset of the data, and when stitched together, these frames create the illusion of motion. The subsets drive the flow of the animation, making the story unfold dynamically.
+![Concept of Animation](../figures/image1.jpg)
+### Terminology
+Before diving into the steps for building an animated statistical graph, it’s useful to clarify some key concepts:
+
+1. Frame: In an animated line chart, each frame corresponds to a specific time point or category. As the animation progresses from one frame to the next, the data points update to reflect the new subset of information.
+
+2. Animation Attributes: These are the settings that define how the animation behaves. Examples include the duration of each frame, the easing function that controls the smoothness of transitions, and whether playback begins from the current frame or restarts from the beginning.
+
+## Getting started
+
+### Check, install and launch packages
+Below are brief definition of each package that we will be using in the exercise:
+- plotly: A library for building interactive statistical graphics.
+
+- gganimate: An extension of ggplot2 that enables the creation of animated statistical plots.
+
+- gifski: Converts video frames into GIF animations, using pngquant for efficient color palettes and temporal dithering. It produces high‑quality animated GIFs with thousands of colors per frame.
+
+- gapminder: A sample dataset derived from Gapminder.org, often used for visualization exercises. In this context, it provides a convenient country_colors scheme.
+
+- tidyverse: A collection of modern R packages designed for data science workflows, including data wrangling, transformation, and communication tasks. It also supports the creation of static statistical graphics.
+
+```{r}
+pacman::p_load(readxl, gifski, gapminder,
+               plotly, gganimate, tidyverse)
+```
+### Importing Data
+In this part, we’ll be working with the Data worksheet from the GlobalPopulation Excel workbook. The code chunk below will read the Excel workbook
+
+```{r}
+col <- c("Country", "Continent")
+globalPop <- read_xls("../data/GlobalPopulation.xls",
+                      sheet="Data") %>%
+  mutate_at(col, as.factor) %>%
+  mutate(Year = as.integer(Year))
+```
+Another version that we can code with the same output is using `across` instead of `mutate_at`
+```{r}
+col <- c("Country", "Continent")
+globalPop <- read_xls("../data/GlobalPopulation.xls",
+                      sheet="Data") %>%
+  mutate(across(col, as.factor)) %>%
+  mutate(Year = as.integer(Year))
+```
+## Animated Data Visualization using gganimate method
+gganimate extends the grammar of graphics in ggplot2 to incorporate animation. It does this by introducing new grammar components that can be added to a plot object, allowing you to control how the visualization evolves over time.
+
+1. transition_*(): Specifies how the data should be distributed and connected across time.
+
+2. view_*(): Defines how the positional scales (axes, ranges) adjust throughout the animation.
+
+3. shadow_*(): Determines how data from other time points is displayed at the current moment.
+
+4. enter_*() / exit_*(): Control how new data appears and how old data fades out during the animation.
+
+5. ease_aes(): Sets the easing behavior for aesthetic transitions, influencing how smoothly visual properties change.
+
+### Building a static Population Bubble Plot
+```{r}
+ggplot(globalPop, aes(x=Old, y=Young,
+                      size=Population,
+                      color=Country)) +
+  geom_point(alpha=0.7,
+             show.legend=FALSE) +
+  scale_color_manual(values = country_colors) +
+  scale_size(range = c(2,12)) +
+  labs(title = 'Year: {frame_time}',
+       x = '%Aged',
+       y = '%Young')
+```
+
+### Building an animated Population Bubble Plot
+In the following code,
+
+- transition_time() from gganimate is used to animate the plot across distinct time states, such as different years.
+
+- ease_aes() controls how visual properties (aesthetics) change during transitions. By default, easing is linear, but we can choose alternative methods such as quadratic, cubic, quartic, quintic, sine, circular, exponential, elastic, back, or bounce to adjust the smoothness and style of the animation.
+
+```{r}
+ggplot(globalPop, aes(x=Old, y=Young,
+                      size=Population,
+                      color=Country)) +
+  geom_point(alpha=0.7,
+             show.legend=FALSE) +
+  scale_color_manual(values = country_colors) +
+  scale_size(range = c(2,12)) +
+  labs(title = 'Yea: {frame_time}',
+       x = '%Aged',
+       y = '%Young') +
+  transition_time(Year) +
+  ease_aes('linear')
+```
+
+### Animated Data Visualizuation using plotly method
+In the Plotly R package, both ggplotly() and plot_ly() support key frame animations through the frame argument or aesthetic. This allows plots to evolve across distinct time states or categories. They also provide an ids argument/aesthetic, which ensures that objects with the same identifier transition smoothly between frames. This helps maintain object constancy, so elements appear to persist rather than being redrawn from scratch.
+
+## Building an animated Population Bubble Plot using ggplotly()
+::: {.panel-tabset}
+
+### The plot
+```{r,echo=FALSE}
+bbp <- ggplot(globalPop, 
+              aes(x=Old,
+                  y=Young,
+                  size=Population,
+                  color=Country)) +
+  geom_point(aes(size=Population,
+                 frame=Year),
+             alpha = 0.7) +
+  scale_color_manual(values = country_colors) +
+  scale_size(range = c(2,12)) +
+  labs(x = '%Aged',
+       y = '%Young') +
+  theme(legend.position = 'none')
+
+ggplotly(bbp)
+```
+
+### The code chunk
+
+```r
+bbp <- ggplot(globalPop, 
+              aes(x=Old,
+                  y=Young,
+                  size=Population,
+                  color=Country)) +
+  geom_point(aes(size=Population,
+                 frame=Year),
+             alpha = 0.7) +
+  scale_color_manual(values = country_colors) +
+  scale_size(range = c(2,12)) +
+  labs(x = '%Aged',
+       y = '%Young') +
+  theme(legend.position = 'none')
+
+ggplotly(bbp)     
+```
+Normally, ggplot2 adds a legend when you map aesthetics like color, size, or shape to variables. Setting `legend.position = "none"` tells ggplot2 not to display the legend, even if one would normally be create where this is useful when the legend is redundant.
+:::
+
+## Building an animated Population Bubble Plot using plotly()
+::: {.panel-tabset}
+
+### The plot
+```{r,echo=FALSE}
+bbp2 <- globalPop %>%
+  plot_ly( x = ~Old,
+           y = ~Young,
+           size = ~Population,
+           color = ~Continent,
+           sizes = c(2,100),
+           frame = ~Year,
+           text = ~Country,
+           hoverinfo = "text",
+           type = 'scatter',
+           mode = 'markers'
+           ) %>%
+  layout(showlegend = FALSE)
+bbp2
+```
+
+### The code chunk
+```r
+bbp2 <- globalPop %>%
+  plot_ly( x = ~Old,
+           y = ~Young,
+           size = ~Population,
+           color = ~Continent,
+           sizes = c(2,100),
+           frame = ~Year,
+           text = ~Country,
+           hoverinfo = "text",
+           type = 'scatter',
+           mode = 'markers'
+           ) %>%
+  layout(showlegend = FALSE)
+bbp2
+```
