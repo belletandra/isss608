@@ -17,7 +17,12 @@ website:
             href: handson/exercise3.qmd
           - text: "Exercise 4"
             href: handson/exercise4.qmd
-          
+          - text: "Exercise 5"
+            href: handson/exercise5.qmd
+          - text: "Exercise 6"
+            href: handson/exercise6.qmd
+          - text: "Exercise 7"
+            href: handson/exercise7.qmd
       - text: "In-class"
         menu:
           - text: "Exercise 1"
