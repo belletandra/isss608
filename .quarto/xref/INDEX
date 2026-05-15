@@ -22,5 +22,26 @@
   },
   "handson/exercise4.qmd": {
     "exercise4.html": "0f1c14f5"
+  },
+  "handson/exercise5-part1.qmd": {
+    "exercise5-part1.html": "4c86e18d"
+  },
+  "handson/exercise5.qmd": {
+    "exercise5.html": "a2983dd0"
+  },
+  "handson/exercise5-part2.qmd": {
+    "exercise5-part2.html": "cdad7f4e"
+  },
+  "exercise5.qmd": {
+    "exercise5.html": "c4c50cc4"
+  },
+  "handson/exercise5-part3.qmd": {
+    "exercise5-part3.html": "286013f0"
+  },
+  "handson/exercise5-part4.qmd": {
+    "exercise5-part4.html": "3433f6e8"
+  },
+  "handson/exercise5-part5.qmd": {
+    "exercise5-part5.html": "3fae7850"
   }
 }

@@ -9,7 +9,7 @@ execute:
   echo: true
   eval: true
   warning: false
-#  freeze: true
+  freeze: true
 ---
 
 ## Visualizing Distribution
@@ -259,7 +259,7 @@ ggplot(exam_data,
   theme_ridges()
 ```
 
-The shaded regions represent probability intervals—red for the lower tail (0–2.5%), gray for the central range (2.5–97.5%), and blue for the upper tail (97.5–100%). This highlights how each class’ scores spread and where extreme values occur within their distributions.
+The shaded regions represent probability intervals---red for the lower tail (0--2.5%), gray for the central range (2.5--97.5%), and blue for the upper tail (97.5--100%). This highlights how each class' scores spread and where extreme values occur within their distributions.
 
 ### The code chunk
 
@@ -393,8 +393,7 @@ ggplot(exam_data,
             dotsize = 2)
 ```
 
-The dots represent individual English scores, giving a clear view of data density, outliers, and summary statistics.
-### The code chunk
+The dots represent individual English scores, giving a clear view of data density, outliers, and summary statistics. \### The code chunk
 
 ``` r
 ggplot(exam_data,
@@ -497,6 +496,7 @@ We will use a visual of one-sample t-test on English scores using the `gghistost
 
 ::: panel-tabset
 ### The plot
+
 ```{r, echo = FALSE}
 set.seed(1234)
 
@@ -512,7 +512,8 @@ gghistostats(
 This histogram shows the distribution of English scores with most values clustering between roughly 50 and 85. The blue dashed line marks the estimated mean score.
 
 ### The code chunk
-```r
+
+``` r
 set.seed(1234)
 
 gghistostats(
@@ -535,7 +536,6 @@ gghistostats(
 `xlab` labels the x-axis as English scores for clarity.
 
 By default, it provides statistical details, Bayes Factor, sample size and distribution summary.
-
 :::
 
 ### Unpacking the Bayes Factor
@@ -600,7 +600,7 @@ ggbetweenstats(
 
 `p.adjust.method` adjusts p-values using the false discovery rate method to control for multiple comparisons.
 
-**Interpretation**: This plot compares English score distributions across racial groups. The statistical results above show a significant difference among groups (Welch’s F = 10.15,p ≈ 1.7 × 10⁻⁴), with Chinese and Others having higher mean scores than Indian and Malay, while the Bayesian metrics above confirm strong evidence supporting these group differences.
+**Interpretation**: This plot compares English score distributions across racial groups. The statistical results above show a significant difference among groups (Welch's F = 10.15,p ≈ 1.7 × 10⁻⁴), with Chinese and Others having higher mean scores than Indian and Malay, while the Bayesian metrics above confirm strong evidence supporting these group differences.
 
 #### Summary of Tests
 
@@ -1418,7 +1418,6 @@ dfCI <- data.frame(number.ll95, number.ul95, number.ll999,
 ### Plotting a static funnel plot using ggplot2 method
 
 ::: panel-tabset
-
 ### The plot
 
 ```{r, echo = FALSE}
@@ -1586,7 +1585,6 @@ Applies a light theme for the plot background
 ```
 
 This chunk customizes few theme elements: title font size, legend position in top right corner, legend text and title sizes, legend background with dotted grey border, legend key height
-
 :::
 
 ### Interactive Funnel Plot using plotly and ggplot2

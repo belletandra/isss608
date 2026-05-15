@@ -1,0 +1,23 @@
+---
+title: "Hands-On Exercise5"
+format: html
+editor: visual
+author: "Anabelle Eveleen T"
+date: "2026-05-12"
+date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  # freeze: true
+---
+
+In this fifth exercise, we will demonstrate how to build **Visual Multivariate Analysis**
+
+This exercise is divided into five parts. Use the links below to access each section:
+
+-   [Part 1, Building Ternary Plot](exercise5-part1.qmd)
+-   [Part 2, Visual Correlation Analysis](exercise5-part2.qmd)
+-   [Part 3, Visual Multivariate Analysis using Heatmap](exercise5-part3.qmd)
+-   [Part 4, Visual Multivariate Analysis using Parallel Coordinates Plot](exercise5-part4.qmd)
+-   [Part 5, Treemap Visualization](exercise5-part5.qmd)
