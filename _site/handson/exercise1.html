@@ -146,12 +146,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Exercise 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../handson/hands-on-3.qmd">
+    <a class="dropdown-item" href="../handson/exercise3.html">
  <span class="dropdown-text">Exercise 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../handson/hands-on-4.qmd">
+    <a class="dropdown-item" href="../handson/exercise4.html">
  <span class="dropdown-text">Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../handson/exercise5.html">
+ <span class="dropdown-text">Exercise 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../handson/exercise6.qmd">
+ <span class="dropdown-text">Exercise 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../handson/exercise7.qmd">
+ <span class="dropdown-text">Exercise 7</span></a>
   </li>  
     </ul>
   </li>
@@ -176,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home">    
         <li>
-    <a class="dropdown-item" href="../takehome/take-home-1.qmd">
+    <a class="dropdown-item" href="../takehome/take-home-1.html">
  <span class="dropdown-text">Exercise 1</span></a>
   </li>  
         <li>
@@ -205,17 +217,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#histogram-of-exam-data" id="toc-histogram-of-exam-data" class="nav-link active" data-scroll-target="#histogram-of-exam-data">Histogram of Exam Data</a></li>
-  <li><a href="#ggplot-objects" id="toc-ggplot-objects" class="nav-link" data-scroll-target="#ggplot-objects">ggplot objects</a>
+  <li><a href="#histogram-of-exam-data" id="toc-histogram-of-exam-data" class="nav-link active" data-scroll-target="#histogram-of-exam-data"><span class="header-section-number">1</span> Histogram of Exam Data</a></li>
+  <li><a href="#ggplot-objects" id="toc-ggplot-objects" class="nav-link" data-scroll-target="#ggplot-objects"><span class="header-section-number">2</span> ggplot objects</a>
   <ul class="collapse">
-  <li><a href="#geometric-objects" id="toc-geometric-objects" class="nav-link" data-scroll-target="#geometric-objects">geometric objects:</a></li>
+  <li><a href="#geometric-objects" id="toc-geometric-objects" class="nav-link" data-scroll-target="#geometric-objects"><span class="header-section-number">2.1</span> geometric objects:</a></li>
   </ul></li>
-  <li><a href="#statistic-function" id="toc-statistic-function" class="nav-link" data-scroll-target="#statistic-function">statistic function</a>
+  <li><a href="#statistic-function" id="toc-statistic-function" class="nav-link" data-scroll-target="#statistic-function"><span class="header-section-number">3</span> statistic function</a>
   <ul class="collapse">
-  <li><a href="#stat" id="toc-stat" class="nav-link" data-scroll-target="#stat">stat()</a></li>
-  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets">facets</a></li>
-  <li><a href="#coordinates" id="toc-coordinates" class="nav-link" data-scroll-target="#coordinates">coordinates</a></li>
-  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">themes</a></li>
+  <li><a href="#stat" id="toc-stat" class="nav-link" data-scroll-target="#stat"><span class="header-section-number">3.1</span> stat()</a></li>
+  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets"><span class="header-section-number">3.2</span> facets</a></li>
+  <li><a href="#coordinates" id="toc-coordinates" class="nav-link" data-scroll-target="#coordinates"><span class="header-section-number">3.3</span> coordinates</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">3.4</span> themes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -267,8 +279,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>exam_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/Exam_data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="histogram-of-exam-data" class="level2">
-<h2 class="anchored" data-anchor-id="histogram-of-exam-data">Histogram of Exam Data</h2>
+<section id="histogram-of-exam-data" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="histogram-of-exam-data"><span class="header-section-number">1</span> Histogram of Exam Data</h2>
 <p>First, we compare exam data using a histogram</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(exam_data<span class="sc">$</span>MATHS)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -281,8 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="ggplot-objects" class="level2">
-<h2 class="anchored" data-anchor-id="ggplot-objects">ggplot objects</h2>
+<section id="ggplot-objects" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="ggplot-objects"><span class="header-section-number">2</span> ggplot objects</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -305,8 +317,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="geometric-objects" class="level3">
-<h3 class="anchored" data-anchor-id="geometric-objects">geometric objects:</h3>
+<section id="geometric-objects" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="geometric-objects"><span class="header-section-number">2.1</span> geometric objects:</h3>
 <p>geom_bar</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
@@ -477,10 +489,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="statistic-function" class="level2">
-<h2 class="anchored" data-anchor-id="statistic-function">statistic function</h2>
-<section id="stat" class="level3">
-<h3 class="anchored" data-anchor-id="stat">stat()</h3>
+<section id="statistic-function" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="statistic-function"><span class="header-section-number">3</span> statistic function</h2>
+<section id="stat" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="stat"><span class="header-section-number">3.1</span> stat()</h3>
 <p>stat_summary()</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
@@ -532,8 +544,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="facets" class="level3">
-<h3 class="anchored" data-anchor-id="facets">facets</h3>
+<section id="facets" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="facets"><span class="header-section-number">3.2</span> facets</h3>
 <p>facet_wrap()</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
@@ -563,8 +575,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="coordinates" class="level3">
-<h3 class="anchored" data-anchor-id="coordinates">coordinates</h3>
+<section id="coordinates" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="coordinates"><span class="header-section-number">3.3</span> coordinates</h3>
 <p>vertical coordinate</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
@@ -623,8 +635,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="themes" class="level3">
-<h3 class="anchored" data-anchor-id="themes">themes</h3>
+<section id="themes" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="themes"><span class="header-section-number">3.4</span> themes</h3>
 <p>bar chart using gray color</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>exam_data, </span>
