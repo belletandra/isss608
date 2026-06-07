@@ -1,0 +1,14 @@
+---
+title: "Hands-On Exercise5"
+format: html
+editor: visual
+author: "Anabelle Eveleen T"
+date: "2026-06-04"
+date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  # freeze: true
+---
+
