@@ -43,5 +43,17 @@
   },
   "handson/exercise5-part5.qmd": {
     "exercise5-part5.html": "3fae7850"
+  },
+  "takehome/take-home-1.qmd": {
+    "take-home-1.html": "7ab9c33c"
+  },
+  "takehome/executive_summaryfinal.qmd": {
+    "executive_summaryfinal.html": "8196bfd0"
+  },
+  "takehome/mc1try.qmd": {
+    "mc1try.html": "a1c0d1cc"
+  },
+  "takehome/take-home-2.qmd": {
+    "take-home-2.html": "8033e279"
   }
 }

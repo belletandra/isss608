@@ -9,7 +9,7 @@ execute:
   echo: true
   eval: true
   warning: false
-# freeze : true
+  freeze : true
 ---
 
 ## Overview
@@ -70,11 +70,12 @@ agpop_mutated <- pop_data %>%
 ## Plotting Ternary Plot
 
 ### Plotting a static ternary diagram
+
 We will use `ggtern()` function of ggtern package to create the simplest ternary plot.
 
-:::panel-tabset
-
+::: panel-tabset
 ### Without title
+
 ```{r}
 ggtern(data=agpop_mutated, 
        aes(x=YOUNG, y= ACTIVE, z=OLD)) +
@@ -82,6 +83,7 @@ ggtern(data=agpop_mutated,
 ```
 
 ### With title
+
 ```{r}
 ggtern(data=agpop_mutated, 
        aes(x=YOUNG, y= ACTIVE, z=OLD)) +
@@ -89,15 +91,16 @@ ggtern(data=agpop_mutated,
   labs(title="Population structure, 2015") +
   theme_rgbw()
 ```
-
 :::
 
 ## Plotting Interactive Ternary Plot
+
 We will incorporate `plot_ly()` function to improve our static plot into an interactive one
 
 :::panel-tabset
 
 ### The plot
+
 ```{r, echo=FALSE}
 # reusable function to create object annotation
 label <- function(txt) {
@@ -150,7 +153,8 @@ plot_ly(
 ```
 
 ### The code chunk
-```r
+
+``` r
 # reusable function to create object annotation
 label <- function(txt) {
   list(
@@ -200,4 +204,3 @@ plot_ly(
     )
   )
 ```
-
