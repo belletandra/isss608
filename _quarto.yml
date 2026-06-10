@@ -23,6 +23,8 @@ website:
             href: handson/exercise6.qmd
           - text: "Exercise 7"
             href: handson/exercise7.qmd
+          - text: "Exercise 8"
+            href: handson/exercise8.qmd
       - text: "In-class"
         menu:
           - text: "Exercise 1"

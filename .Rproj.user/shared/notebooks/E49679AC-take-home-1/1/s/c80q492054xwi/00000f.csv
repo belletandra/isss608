@@ -1,9 +1,0 @@
-"0","raw <- read_delim(
-  ""../data/Dataset of motor insurance portfolio.csv"",
-  delim = "";"",
-  show_col_types = FALSE
-)
-"
-"2","Error in read_delim(""../data/Dataset of motor insurance portfolio.csv"",  : 
-  could not find function ""read_delim""
-"

@@ -3,99 +3,99 @@
     "objectID": "takehome/executive_summaryfinal.html#table-of-contents",
     "href": "takehome/executive_summaryfinal.html#table-of-contents",
     "title": "Motor Insurance Portfolio",
-    "section": "Table of Contents",
-    "text": "Table of Contents\nDo take note that the slides are scrollable to see plot insights\n\n\n\nSlide\nSection\n\n\n\n\n1\nCover\n\n\n2\nContents\n\n\n3\nStudy Overview\n\n\n4\nPortfolio Snapshot & Temporal Growth\n\n\n5\nPortfolio Composition: Policy, Bonus & Geography\n\n\n6\nDriver Age & Vehicle Age Distributions\n\n\n7\nClaim Severity & Premium Distributions\n\n\n8\nLoss Ratio by Policy Type\n\n\n9\nClaim Frequency by Driver Age Band\n\n\n10\nBonus Score: Claim Frequency & Pure Premium\n\n\n11\nGeographic Risk Drivers\n\n\n12\nVehicle Age vs Claim Severity\n\n\n13\nTemporal Trends & Correlation Matrix\n\n\n14\nLoss Ratio Heatmap & Treemap\n\n\n15\nKey Risk Flags & Conclusion\n\n\n\n\nThis executive summary follows the same analytical flow as the main report. From portfolio structure, univariate visualization, bivariate statistical validation, to bonus analysis. Slides 3 to 7 cover univariate exploration across numerical and categorical dimensions. Slides 8 to 14 present bivariate and multivariate findings with statistical confirmation. Slide 15 contains summary and actionable recommendations drawn directly from the visual analytics findings."
+    "section": "",
+    "text": "Do take note that the slides are scrollable to see plot insights\n\n\n\nSlide\nSection\n\n\n\n\n1\nCover\n\n\n2\nContents\n\n\n3\nStudy Overview\n\n\n4\nPortfolio Snapshot & Temporal Growth\n\n\n5\nPortfolio Composition: Policy, Bonus & Geography\n\n\n6\nDriver Age & Vehicle Age Distributions\n\n\n7\nClaim Severity & Premium Distributions\n\n\n8\nLoss Ratio by Policy Type\n\n\n9\nClaim Frequency by Driver Age Band\n\n\n10\nBonus Score: Claim Frequency & Pure Premium\n\n\n11\nGeographic Risk Drivers\n\n\n12\nVehicle Age vs Claim Severity\n\n\n13\nTemporal Trends & Correlation Matrix\n\n\n14\nLoss Ratio Heatmap & Treemap\n\n\n15\nKey Risk Flags & Conclusion\n\n\n\n\nThis executive summary follows the same analytical flow as the main report. From portfolio structure, univariate visualization, bivariate statistical validation, to bonus analysis. Slides 3 to 7 cover univariate exploration across numerical and categorical dimensions. Slides 8 to 14 present bivariate and multivariate findings with statistical confirmation. Slide 15 contains summary and actionable recommendations drawn directly from the visual analytics findings."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#study-overview",
     "href": "takehome/executive_summaryfinal.html#study-overview",
     "title": "Motor Insurance Portfolio",
-    "section": "Study Overview",
-    "text": "Study Overview\n\n\nDataset 354,140 policy-year observations from a Spanish non-life insurer (2022–2024), 47 variables across four variable groups: Policy characteristics, Driver & Vehicle attributes, Premiums, and Claims & Exposure.\nResearch Questions\n\nHow are key portfolio variables distributed across numerical and categorical dimensions?\nWhich factors are statistically associated with higher claim frequency, loss severity, or loss ratio?\n\n\nDerived Actuarial KPIs\n\nLoss Ratio = Total Incurred ÷ Total Premium\n\n\nClaim Frequency = Total Claims ÷ Total Exposure\n\n\nClaim Severity = Total Incurred ÷ Total Claims (claim-active policies only)\n\n\nPure Premium = Total Incurred ÷ Total Exposure\n\n\n\nThe study applies tidyverse-based data wrangling and ggplot2-based visual analytics to a real-world motor insurance dataset. Four derived KPIs underpin all analyses. Loss ratio measures overall profitability. Claim frequency captures how often losses occur per unit of exposure. Claim severity measures cost per incident. Pure premium combines both into the pricing base rate. Note that claim_severity carries ~86% missing values by construction (zero-claim policies), not data quality failure."
+    "section": "2 Study Overview",
+    "text": "2 Study Overview\n\n\nDataset 354,140 policy-year observations from a Spanish non-life insurer (2022–2024), 47 variables across four variable groups: Policy characteristics, Driver & Vehicle attributes, Premiums, and Claims & Exposure.\nResearch Questions\n\nHow are key portfolio variables distributed across numerical and categorical dimensions?\nWhich factors are statistically associated with higher claim frequency, loss severity, or loss ratio?\n\n\nDerived Actuarial KPIs\n\nLoss Ratio = Total Incurred ÷ Total Premium\n\n\nClaim Frequency = Total Claims ÷ Total Exposure\n\n\nClaim Severity = Total Incurred ÷ Total Claims (claim-active policies only)\n\n\nPure Premium = Total Incurred ÷ Total Exposure\n\n\n\n\nThe study applies tidyverse-based data wrangling and ggplot2-based visual analytics to a real-world motor insurance dataset. Four derived KPIs underpin all analyses. Loss ratio measures overall profitability. Claim frequency captures how often losses occur per unit of exposure. Claim severity measures cost per incident. Pure premium combines both into the pricing base rate. Note that claim_severity carries ~86% missing values by construction (zero-claim policies), not data quality failure."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#portfolio-snapshot-temporal-growth",
     "href": "takehome/executive_summaryfinal.html#portfolio-snapshot-temporal-growth",
     "title": "Motor Insurance Portfolio",
-    "section": "Portfolio Snapshot & Temporal Growth",
-    "text": "Portfolio Snapshot & Temporal Growth\n\n\n\n\n\n\n\nPortfolio grew 150% from 2022 to 2024. Combined Coverage (CC) is the dominant product throughout. Loss ratio remains below break-even but trends upward, pricing sustainability warrants close monitoring.\n\n\nThe portfolio experienced a 150% increase from 2022 to 2024, primarily driven by growth in Combined Coverage policies. Despite this scale-up, the aggregate loss ratio remains below 100% each year, indicating overall solvency. However, the upward trend in loss ratio signals that claims costs are rising faster than premiums. The stacked bar confirms CC dominates throughout, Comprehensive with Excess and Third-party + Glass contribute consistent but smaller shares. Rapid growth introduces cohort maturation risk meaning new business claims patterns typically deteriorate as policies age, and loss ratios in 2025 may worsen as 2024 cohorts develop."
+    "section": "3 Portfolio Snapshot & Temporal Growth",
+    "text": "3 Portfolio Snapshot & Temporal Growth\n\n\n\n\n\n\n\n\nPortfolio grew 150% from 2022 to 2024. Combined Coverage (CC) is the dominant product throughout. Loss ratio remains below break-even but trends upward, pricing sustainability warrants close monitoring.\n\n\nThe portfolio experienced a 150% increase from 2022 to 2024, primarily driven by growth in Combined Coverage policies. Despite this scale-up, the aggregate loss ratio remains below 100% each year, indicating overall solvency. However, the upward trend in loss ratio signals that claims costs are rising faster than premiums. The stacked bar confirms CC dominates throughout, Comprehensive with Excess and Third-party + Glass contribute consistent but smaller shares. Rapid growth introduces cohort maturation risk meaning new business claims patterns typically deteriorate as policies age, and loss ratios in 2025 may worsen as 2024 cohorts develop."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#portfolio-composition-policy-bonus-geography",
     "href": "takehome/executive_summaryfinal.html#portfolio-composition-policy-bonus-geography",
     "title": "Motor Insurance Portfolio",
-    "section": "Portfolio Composition: Policy, Bonus & Geography",
-    "text": "Portfolio Composition: Policy, Bonus & Geography\n  \n\nCC dominates policy mix. Over 90% of policyholders hold a “Good” bonus score, reflecting the insurer’s underwriting selectivity. Portfolio is predominantly inland and urban, indicating concentrated traffic-related risk.\n\n\nCombined Coverage is the dominant policy type, followed by Comprehensive with Excess and Third-party. The bonus score distribution is heavily skewed toward “Good” meaning the insurer has successfully filtered out high-risk policyholders through pricing or cancellation. This creates a structurally low-risk book on the bonus dimension, but it also means bad-bonus policyholders, though few, carry disproportionate tail risk. Geographic concentration in inland and urban areas aligns with Spain’s major population centres (Madrid, Zaragoza, Seville), embedding material urban traffic frequency risk across the majority of policies."
+    "section": "4 Portfolio Composition: Policy, Bonus & Geography",
+    "text": "4 Portfolio Composition: Policy, Bonus & Geography\n  \n\nCC dominates policy mix. Over 90% of policyholders hold a “Good” bonus score, reflecting the insurer’s underwriting selectivity. Portfolio is predominantly inland and urban, indicating concentrated traffic-related risk.\n\n\nCombined Coverage is the dominant policy type, followed by Comprehensive with Excess and Third-party. The bonus score distribution is heavily skewed toward “Good” meaning the insurer has successfully filtered out high-risk policyholders through pricing or cancellation. This creates a structurally low-risk book on the bonus dimension, but it also means bad-bonus policyholders, though few, carry disproportionate tail risk. Geographic concentration in inland and urban areas aligns with Spain’s major population centres (Madrid, Zaragoza, Seville), embedding material urban traffic frequency risk across the majority of policies."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#driver-age-vehicle-age-distributions",
     "href": "takehome/executive_summaryfinal.html#driver-age-vehicle-age-distributions",
     "title": "Motor Insurance Portfolio",
-    "section": "Driver Age & Vehicle Age Distributions",
-    "text": "Driver Age & Vehicle Age Distributions\n\n\n\n\n\n\n\nDriver age centres at approximately 49 years with a thin young-driver tail. Vehicle age spreads uniformly from 0 to 68 years, with a long tail of older vehicles that may present mechanical and valuation risk.\n\n\nDriver age follows a near-normal distribution centred around 49 years, with mean and median closely aligned. The thin tail of young drivers (18–25) indicates that while the portfolio has limited exposure to inexperienced drivers, those that exist are concentrated and high-risk. Vehicle age spans 0 to 68 years with a stable age between 10 and 40 years. The long right tail of very old vehicles raises concerns around mechanical reliability and lower residual insured values, both of which affect claim severity modelling. Together, these profiles describe a mature, experienced driver base operating a diverse-age vehicle fleet."
+    "section": "5 Driver Age & Vehicle Age Distributions",
+    "text": "5 Driver Age & Vehicle Age Distributions\n\n\n\n\n\n\n\n\nDriver age centres at approximately 49 years with a thin young-driver tail. Vehicle age spreads uniformly from 0 to 68 years, with a long tail of older vehicles that may present mechanical and valuation risk.\n\n\nDriver age follows a near-normal distribution centred around 49 years, with mean and median closely aligned. The thin tail of young drivers (18–25) indicates that while the portfolio has limited exposure to inexperienced drivers, those that exist are concentrated and high-risk. Vehicle age spans 0 to 68 years with a stable age between 10 and 40 years. The long right tail of very old vehicles raises concerns around mechanical reliability and lower residual insured values, both of which affect claim severity modelling. Together, these profiles describe a mature, experienced driver base operating a diverse-age vehicle fleet."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#claim-severity-total-premium-distributions",
     "href": "takehome/executive_summaryfinal.html#claim-severity-total-premium-distributions",
     "title": "Motor Insurance Portfolio",
-    "section": "Claim Severity & Total Premium Distributions",
-    "text": "Claim Severity & Total Premium Distributions\n\n\n\nBoth distributions are strongly right-skewed. Claim severity clusters below €5,000 with a heavy right tail. Total premium is similarly skewed, reflecting the range from basic TP to comprehensive coverage.\n\n\nClaim severity is restricted to claim-active policies (had_claim == TRUE) to avoid zero-inflation distorting the shape. The right-skewed distribution confirms that mean severity substantially exceeds median, meaning pricing models relying on averages will underestimate tail risk. The long tail reflects serious liability losses and total vehicle write-offs. The premium distribution shows a similar skew: most policies generate premiums below €1,000, but a long tail of high-value comprehensive policies creates heterogeneity. This skew is typical in commercial motor books where high-risk or high-value vehicles attract disproportionately higher premiums."
+    "section": "6 Claim Severity & Total Premium Distributions",
+    "text": "6 Claim Severity & Total Premium Distributions\n\n\n\nBoth distributions are strongly right-skewed. Claim severity clusters below €5,000 with a heavy right tail. Total premium is similarly skewed, reflecting the range from basic TP to comprehensive coverage.\n\n\nClaim severity is restricted to claim-active policies (had_claim == TRUE) to avoid zero-inflation distorting the shape. The right-skewed distribution confirms that mean severity substantially exceeds median, meaning pricing models relying on averages will underestimate tail risk. The long tail reflects serious liability losses and total vehicle write-offs. The premium distribution shows a similar skew: most policies generate premiums below €1,000, but a long tail of high-value comprehensive policies creates heterogeneity. This skew is typical in commercial motor books where high-risk or high-value vehicles attract disproportionately higher premiums."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#loss-ratio-by-policy-type",
     "href": "takehome/executive_summaryfinal.html#loss-ratio-by-policy-type",
     "title": "Motor Insurance Portfolio",
-    "section": "Loss Ratio by Policy Type",
-    "text": "Loss Ratio by Policy Type\n  \n\nKruskal-Wallis confirms loss ratios differ significantly across all policy types (p &lt; 0.001). Comprehensive No Excess spreads well past 100%. Third-party policies cluster low and stable. Nearly all pairwise contrasts are statistically significant (***).\n\n\nThe half-eye plots show the full distributional shape. Comprehensive No Excess has the widest, most right-skewed distribution, indicating high individual policy volatility in addition to elevated average loss ratios. The Dunn post-hoc heatmap shows that almost every policy type pair is statistically significant at p &lt; 0.001, confirming that product design is the single strongest structural predictor of profitability."
+    "section": "7 Loss Ratio by Policy Type",
+    "text": "7 Loss Ratio by Policy Type\n  \n\nKruskal-Wallis confirms loss ratios differ significantly across all policy types (p &lt; 0.001). Comprehensive No Excess spreads well past 100%. Third-party policies cluster low and stable. Nearly all pairwise contrasts are statistically significant (***).\n\n\nThe half-eye plots show the full distributional shape. Comprehensive No Excess has the widest, most right-skewed distribution, indicating high individual policy volatility in addition to elevated average loss ratios. The Dunn post-hoc heatmap shows that almost every policy type pair is statistically significant at p &lt; 0.001, confirming that product design is the single strongest structural predictor of profitability."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#claim-frequency-by-driver-age-band",
     "href": "takehome/executive_summaryfinal.html#claim-frequency-by-driver-age-band",
     "title": "Motor Insurance Portfolio",
-    "section": "Claim Frequency by Driver Age Band",
-    "text": "Claim Frequency by Driver Age Band\n \n\nClaim frequency follows a U-shaped pattern which highest is among the 18–24 band, declining steadily through 45–64 (the most stable segment). This descriptive insight is statistically confirmed by Kruskal-Wallis (p &lt; 0.001).\n\n\nThe violin plot reveals full distributional shape beyond what a boxplot alone would show, the 18–24 group has the widest violin and highest mean. The gradual decline from 25 to 64 represents the portfolio’s core profitable segment. The slight 65+ uptick is associated with age-related cognitive and physical decline. The U-shaped pattern directly justifies age-based premium loadings at both ends of the age spectrum. This finding also interacts with the heatmap on slide 14 giving information that young drivers are not unprofitable in every policy type, only in certain coverage tiers."
+    "section": "8 Claim Frequency by Driver Age Band",
+    "text": "8 Claim Frequency by Driver Age Band\n \n\nClaim frequency follows a U-shaped pattern which highest is among the 18–24 band, declining steadily through 45–64 (the most stable segment). This descriptive insight is statistically confirmed by Kruskal-Wallis (p &lt; 0.001).\n\n\nThe violin plot reveals full distributional shape beyond what a boxplot alone would show, the 18–24 group has the widest violin and highest mean. The gradual decline from 25 to 64 represents the portfolio’s core profitable segment. The slight 65+ uptick is associated with age-related cognitive and physical decline. The U-shaped pattern directly justifies age-based premium loadings at both ends of the age spectrum. This finding also interacts with the heatmap on slide 14 giving information that young drivers are not unprofitable in every policy type, only in certain coverage tiers."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#bonus-score-claim-frequency-pure-premium",
     "href": "takehome/executive_summaryfinal.html#bonus-score-claim-frequency-pure-premium",
     "title": "Motor Insurance Portfolio",
-    "section": "Bonus Score: Claim Frequency & Pure Premium",
-    "text": "Bonus Score: Claim Frequency & Pure Premium\n  \n\n“Bad” bonus policyholders show materially higher claim frequencies and a fatter pure premium tail. Even “Neutral” carries more risk than “Good”. The sina plot on a log scale reveals the full distributional structure.\n\n\n“Bad” bonus policyholders have a long right tail in claim frequency, meaning rare but high-frequency events are disproportionate in this group. The Kruskal-Wallis test confirms differences are statistically significant. The sina plot shows the “Bad” group not only has a higher mean but also a much fatter right tail, confirming that this group is the primary source of portfolio-level volatility. Both charts together validate the bonus-malus system as an actuarially justified rating tool."
+    "section": "9 Bonus Score: Claim Frequency & Pure Premium",
+    "text": "9 Bonus Score: Claim Frequency & Pure Premium\n  \n\n“Bad” bonus policyholders show materially higher claim frequencies and a fatter pure premium tail. Even “Neutral” carries more risk than “Good”. The sina plot on a log scale reveals the full distributional structure.\n\n\n“Bad” bonus policyholders have a long right tail in claim frequency, meaning rare but high-frequency events are disproportionate in this group. The Kruskal-Wallis test confirms differences are statistically significant. The sina plot shows the “Bad” group not only has a higher mean but also a much fatter right tail, confirming that this group is the primary source of portfolio-level volatility. Both charts together validate the bonus-malus system as an actuarially justified rating tool."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#geographic-risk-drivers",
     "href": "takehome/executive_summaryfinal.html#geographic-risk-drivers",
     "title": "Motor Insurance Portfolio",
-    "section": "Geographic Risk Drivers",
-    "text": "Geographic Risk Drivers\n\n\nUrban areas consistently show higher aggregate loss ratios (Panel A), but claim severity distributions overlap substantially between urban and rural (Panel B). The urban loss ratio premium is driven by frequency, not cost.\n\n\nPanel A uses all policies, while Panel B restricts to claim-active policies to show severity distribution shape without structural zeros collapsing the IQR. The key diagnostic insight is the separation between frequency and severity effects. Moreover, the Wilcoxon test confirms urban loss ratios are significantly higher (p &lt; 0.001), but Panel B shows severity distributions are nearly identical between urban and rural. This means territorial rating adjustments should be applied to the frequency component of pricing, not to severity loadings. Island policies show above average loss ratios across both panels, likely reflecting limited repair infrastructure and distinct weather exposure."
+    "section": "10 Geographic Risk Drivers",
+    "text": "10 Geographic Risk Drivers\n\n\nUrban areas consistently show higher aggregate loss ratios (Panel A), but claim severity distributions overlap substantially between urban and rural (Panel B). The urban loss ratio premium is driven by frequency, not cost.\n\n\nPanel A uses all policies, while Panel B restricts to claim-active policies to show severity distribution shape without structural zeros collapsing the IQR. The key diagnostic insight is the separation between frequency and severity effects. Moreover, the Wilcoxon test confirms urban loss ratios are significantly higher (p &lt; 0.001), but Panel B shows severity distributions are nearly identical between urban and rural. This means territorial rating adjustments should be applied to the frequency component of pricing, not to severity loadings. Island policies show above average loss ratios across both panels, likely reflecting limited repair infrastructure and distinct weather exposure."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#vehicle-age-vs-claim-severity",
     "href": "takehome/executive_summaryfinal.html#vehicle-age-vs-claim-severity",
     "title": "Motor Insurance Portfolio",
-    "section": "Vehicle Age vs Claim Severity",
-    "text": "Vehicle Age vs Claim Severity\n\n\nNewer vehicles (0–5 yrs) attract the highest mean claim severity across both fuel types meaning higher replacement costs. Severity falls sharply with vehicle age.\n\n\nThe bar height shows mean severity and the gap between bar top and error bar bottom represents the gap between mean and median. Newer vehicles have the highest severity because they carry higher insured values and more expensive parts. The sharp decline from 0–5 years to older bands reflects the depreciation curve. Diesel vehicles show slightly higher severity across all age bands, consistent with their generally higher purchase price relative to equivalent gasoline models. These findings support vehicle age and fuel type as components of severity-side pricing models, distinct from frequency factors."
+    "section": "11 Vehicle Age vs Claim Severity",
+    "text": "11 Vehicle Age vs Claim Severity\n\n\nNewer vehicles (0–5 yrs) attract the highest mean claim severity across both fuel types meaning higher replacement costs. Severity falls sharply with vehicle age.\n\n\nThe bar height shows mean severity and the gap between bar top and error bar bottom represents the gap between mean and median. Newer vehicles have the highest severity because they carry higher insured values and more expensive parts. The sharp decline from 0–5 years to older bands reflects the depreciation curve. Diesel vehicles show slightly higher severity across all age bands, consistent with their generally higher purchase price relative to equivalent gasoline models. These findings support vehicle age and fuel type as components of severity-side pricing models, distinct from frequency factors."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#temporal-trends-correlation-matrix",
     "href": "takehome/executive_summaryfinal.html#temporal-trends-correlation-matrix",
     "title": "Motor Insurance Portfolio",
-    "section": "Temporal Trends & Correlation Matrix",
-    "text": "Temporal Trends & Correlation Matrix\n\n\n\nCOMP_N approach break-even in 2024, with upward trending loss ratios. The correlation matrix confirms claim severity, loss ratio and pure premium are strongly linked and critically, claim frequency and severity are near-zero correlated, validating frequency-severity model independence.\n\n\nThe interactive trend chart shows that Third-party policies maintain stable, low loss ratios across all three years, while Comprehensive No Excess shows the most volatile upward trajectory. The upward trend may reflect claims inflation as repair costs rise faster than premium adjustments, or portfolio quality deterioration from rapid growth. T"
+    "section": "12 Temporal Trends & Correlation Matrix",
+    "text": "12 Temporal Trends & Correlation Matrix\n\n\n\nCOMP_N approach break-even in 2024, with upward trending loss ratios. The correlation matrix confirms claim severity, loss ratio and pure premium are strongly linked and critically, claim frequency and severity are near-zero correlated, validating frequency-severity model independence.\n\n\nThe interactive trend chart shows that Third-party policies maintain stable, low loss ratios across all three years, while Comprehensive No Excess shows the most volatile upward trajectory. The upward trend may reflect claims inflation as repair costs rise faster than premium adjustments, or portfolio quality deterioration from rapid growth. T"
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#loss-ratio-heatmap-premium-treemap",
     "href": "takehome/executive_summaryfinal.html#loss-ratio-heatmap-premium-treemap",
     "title": "Motor Insurance Portfolio",
-    "section": "Loss Ratio Heatmap & Premium Treemap",
-    "text": "Loss Ratio Heatmap & Premium Treemap\n \n\n25-34 Age Band + Comprehensive No Excess = 114% loss ratio which is the portfolio’s most unprofitable cell. The same age group under TPG = 28%, highly profitable. Mercedes, BMW and Audi dominate premium share, COMP_N tiers for luxury brands show elevated loss ratios.\n\n\nThe interactive heatmap reveals interaction effects invisible to univariate analysis. Young drivers are not uniformly unprofitable, under Third-party + Glass they are the most profitable age group. The 114% loss ratio in 25-34 × COMP_N is the portfolio’s single most actionable pricing gap and warrants immediate review. Even if certain brand × policy combinations are unprofitable, their contribution to total premium determines the financial materiality. Mercedes, VW and BMW dominate premium share, so their COMP_N loss ratios carry significant portfolio-level impact."
+    "section": "13 Loss Ratio Heatmap & Premium Treemap",
+    "text": "13 Loss Ratio Heatmap & Premium Treemap\n \n\n25-34 Age Band + Comprehensive No Excess = 114% loss ratio which is the portfolio’s most unprofitable cell. The same age group under TPG = 28%, highly profitable. Mercedes, BMW and Audi dominate premium share, COMP_N tiers for luxury brands show elevated loss ratios.\n\n\nThe interactive heatmap reveals interaction effects invisible to univariate analysis. Young drivers are not uniformly unprofitable, under Third-party + Glass they are the most profitable age group. The 114% loss ratio in 25-34 × COMP_N is the portfolio’s single most actionable pricing gap and warrants immediate review. Even if certain brand × policy combinations are unprofitable, their contribution to total premium determines the financial materiality. Mercedes, VW and BMW dominate premium share, so their COMP_N loss ratios carry significant portfolio-level impact."
   },
   {
     "objectID": "takehome/executive_summaryfinal.html#key-risk-flags-conclusion",
     "href": "takehome/executive_summaryfinal.html#key-risk-flags-conclusion",
     "title": "Motor Insurance Portfolio",
-    "section": "Key Risk Flags & Conclusion",
-    "text": "Key Risk Flags & Conclusion\n\n\nSix Validated Findings\n\n1. Policy type is the strongest profitability predictor (KW p &lt; 0.001)\n\n\n2. Bonus score reliably predicts claim frequency, validates bonus-malus system\n\n\n3. Driver age creates a U-shaped risk curve, 18–24 and 65+ are elevated\n\n\n4. Geography = frequency, not severity — urban areas have more accidents, not costlier ones\n\n\n5. Frequency & Severity — empirically validates frequency-severity model independence\n\n\n6. New vehicles cost most — severity declines sharply with vehicle age\n\n\nRecommendation\n\n🔴 25–34 × COMP_N: LR ≈ 114% — re-price with age loading or restructure excess\n\n\n🔴 Urban frequency gap — apply territorial frequency surcharge\n\n\n🔴 150% growth 2022–2024 — monitor 2024 cohort quarterly as claims mature\n\n\n🟡 Luxury brand COMP_N — repair cost inflation may outpace premium adjustments\n\n\n🟢 TP & TPG — stable, profitable segments can protect and grow\n\n\n\nSix findings are statistically validated and directly actionable. The most urgent is the 25–34 × Comprehensive No Excess pricing gap at 114% loss ratio which requires either a premium age-loading or an excess restructure to bring it toward break-even. Urban frequency surcharges should be applied to the frequency component of territorial rating factors, not severity loadings. The 2024 growth cohort requires quarterly monitoring as claims develop."
+    "section": "14 Key Risk Flags & Conclusion",
+    "text": "14 Key Risk Flags & Conclusion\n\n\nSix Validated Findings\n\n1. Policy type is the strongest profitability predictor (KW p &lt; 0.001)\n\n\n2. Bonus score reliably predicts claim frequency, validates bonus-malus system\n\n\n3. Driver age creates a U-shaped risk curve, 18–24 and 65+ are elevated\n\n\n4. Geography = frequency, not severity — urban areas have more accidents, not costlier ones\n\n\n5. Frequency & Severity — empirically validates frequency-severity model independence\n\n\n6. New vehicles cost most — severity declines sharply with vehicle age\n\n\nRecommendation\n\n🔴 25–34 × COMP_N: LR ≈ 114% — re-price with age loading or restructure excess\n\n\n🔴 Urban frequency gap — apply territorial frequency surcharge\n\n\n🔴 150% growth 2022–2024 — monitor 2024 cohort quarterly as claims mature\n\n\n🟡 Luxury brand COMP_N — repair cost inflation may outpace premium adjustments\n\n\n🟢 TP & TPG — stable, profitable segments can protect and grow\n\n\n\n\nSix findings are statistically validated and directly actionable. The most urgent is the 25–34 × Comprehensive No Excess pricing gap at 114% loss ratio which requires either a premium age-loading or an excess restructure to bring it toward break-even. Urban frequency surcharges should be applied to the frequency component of territorial rating factors, not severity loadings. The 2024 growth cohort requires quarterly monitoring as claims develop."
   },
   {
     "objectID": "about.html",
@@ -1076,5 +1076,334 @@
     "title": "Visual Analytics of a Project HarborCrest",
     "section": "8.5 Judge Coverage Analysis",
     "text": "8.5 Judge Coverage Analysis\n\n\nShow code\ncomms_flat %&gt;%\n  filter(judge_active) %&gt;%\n  count(channel) %&gt;%\n  mutate(\n    monitored     = channel == \"comms_huddle\",\n    channel_type  = if_else(monitored, \"Monitored by Judge\", \"Outside Judge's Scope\"),\n    channel_label = recode(channel,\n      comms_huddle    = \"Comms Huddle\",\n      one_on_one_chat = \"1-on-1 Chat\",\n      side_huddle     = \"Side Huddle\",\n      official_post   = \"Official Post\",\n      personal_post   = \"Personal Post\",\n      anonymous_post  = \"Anonymous Post\"\n    ),\n    tile_label = paste0(channel_label, \"\\n(n=\", n, \")\")\n  ) %&gt;%\n  ggplot(aes(area = n, fill = channel_type, label = tile_label)) +\n  treemapify::geom_treemap() +\n  treemapify::geom_treemap_text(\n    colour = \"white\", fontface = \"bold\", size = 11, place = \"centre\"\n  ) +\n  scale_fill_manual(\n    values = c(\"Monitored by Judge\" = \"#27AE60\",\n               \"Outside Judge's Scope\" = \"#C0392B\"),\n    name = NULL\n  ) +\n  labs(\n    title    = \"Judge's Monitoring Coverage (Post May-30)\",\n    subtitle = \"Area proportional to message volume. Red = unmonitored; Green = monitored.\",\n    caption  = \"The breach was orchestrated entirely within red (unmonitored) channels.\"\n  ) +\n  theme_void() +\n  theme(\n    plot.title      = element_text(face = \"bold\", size = 13, colour = \"#2C3E50\"),\n    plot.subtitle   = element_text(size = 10, colour = \"#7F8C8D\"),\n    plot.caption    = element_text(size = 9,  colour = \"#95A5A6\"),\n    legend.position = \"bottom\"\n  )\n\n\n\n\n\n\n\n\n\n\nInsight: Comms Huddle was monitored but large volumes of communication reamined oyutside Judge’s scope. The control system was only supervising the most formal channel, while a large amount of sensitive coordination happened in private or semi-private spaces. Thisn meant the system’s enforcement boundary did not align with the system’s real decision boundary.\n\n\n\n\n\n\n\nImportant\n\n\n\nYes, there were clear leading indicators that such a release was possible. The most important was structural: Judge monitored only the formal Comms Huddle, while substantial communication volume remained outside its scope in one-on-one chats, side huddles, personal posts, and anonymous posts. This created a mismatch between where compliance was enforced and where sensitive coordination actually occurred. In addition, the anomaly timeline shows prior embargo-sensitive behavior before the breach, most notably the May 29 Elena faux-pas and earlier side-huddle CivicLoom references. The anomaly heat map further indicates repeated risk windows — first around side-huddle activation, then around the Elena near-miss, and finally at the breach itself. The rationalization plot adds an important behavioral dimension: private-channel justification language began to appear before the breach, suggesting that actors were starting to reinterpret constraints rather than simply follow them.\nThere were also prior occasions where agent behavior differed from expected behavior. These included the use of unmonitored side channels for merger-sensitive communication, public-facing near-miss behavior in the Elena incident, and emerging contract- or survival-based rationalization in private channels. These earlier occasions resembled the eventual release pathway because they involved the same core behavioral pattern: sensitive information moving or being discussed outside the main compliance boundary.\nThese prior occasions did not result in stronger visible intervention for three main reasons. First, many occurred outside Judge’s effective monitoring scope. Second, they were treated as containable near-misses rather than signs of systemic weakness. Third, they happened before the full June 5 convergence of external pressure, merger urgency, and crisis communication overload. As a result, the organization responded tactically to individual incidents but did not address the deeper structural conditions that made the embargo breach possible."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html",
+    "href": "handson/exercise7-part1.html",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "",
+    "text": "In this hands‑on exercise, we will explore how to model, analyse, and visualise network data\nBy the end of the session, we will be able to:\n\nCreate graph data frames and manipulate them with functions from dplyr, lubridate, and tidygraph.\nBuild network visualisations using ggraph.\nCompute network metrics with tidygraph.\nDesign advanced graph plots by incorporating computed metrics.\nDevelop interactive network views using the visNetwork package."
+  },
+  {
+    "objectID": "takehome/executive_summaryfinal.html",
+    "href": "takehome/executive_summaryfinal.html",
+    "title": "Motor Insurance Portfolio",
+    "section": "",
+    "text": "Do take note that the slides are scrollable to see plot insights\n\n\n\nSlide\nSection\n\n\n\n\n1\nCover\n\n\n2\nContents\n\n\n3\nStudy Overview\n\n\n4\nPortfolio Snapshot & Temporal Growth\n\n\n5\nPortfolio Composition: Policy, Bonus & Geography\n\n\n6\nDriver Age & Vehicle Age Distributions\n\n\n7\nClaim Severity & Premium Distributions\n\n\n8\nLoss Ratio by Policy Type\n\n\n9\nClaim Frequency by Driver Age Band\n\n\n10\nBonus Score: Claim Frequency & Pure Premium\n\n\n11\nGeographic Risk Drivers\n\n\n12\nVehicle Age vs Claim Severity\n\n\n13\nTemporal Trends & Correlation Matrix\n\n\n14\nLoss Ratio Heatmap & Treemap\n\n\n15\nKey Risk Flags & Conclusion\n\n\n\n\nThis executive summary follows the same analytical flow as the main report. From portfolio structure, univariate visualization, bivariate statistical validation, to bonus analysis. Slides 3 to 7 cover univariate exploration across numerical and categorical dimensions. Slides 8 to 14 present bivariate and multivariate findings with statistical confirmation. Slide 15 contains summary and actionable recommendations drawn directly from the visual analytics findings."
+  },
+  {
+    "objectID": "handson/exercise7.html",
+    "href": "handson/exercise7.html",
+    "title": "Hands-On Exercise7",
+    "section": "",
+    "text": "In this exercise, we will explore methods for Modelling, Visualizing and Analysing Network Data and extend our study to Visualizing and Analyzing Text Data with R: tidytext methods.\nThis exercise is divided into two parts. Use the links below to access each section:\n\nPart A, Modelling, Visualizing and Analyzing Network Data\nPart B, Visualizing and Analyzing Text Data with R: tidytext methods"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#installing-and-launching-r-packages",
+    "href": "handson/exercise7-part1.html#installing-and-launching-r-packages",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "2.1 Installing and launching R packages",
+    "text": "2.1 Installing and launching R packages\nFor this exercise, we will install and launch four key packages for network data modelling and visualisation: igraph, tidygraph, ggraph, and visNetwork.\nIn addition to these, we will also use tidyverse for general data wrangling and lubridate, an R package designed specifically for handling and manipulating time data.\n\n\nShow code\npacman::p_load(igraph, tidygraph, ggraph, visNetwork, lubridate, clock, tidyverse, graphlayouts,concaveman, ggforce)"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#importing-data",
+    "href": "handson/exercise7-part1.html#importing-data",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "2.2 Importing data",
+    "text": "2.2 Importing data\nWe will work with data from an oil exploration and extraction company. Two datasets are provided:\n\nNodes dataset containing information about the entities (e.g., agents, departments, or units) represented as nodes in the network.\nEdges dataset containing the links or relationships between those entities, also referred to as connections.\n\nTogether, these datasets allow us to model, analyse, and visualise the company’s communication and operational networks.\n\n\nShow code\nGAStech_nodes &lt;- read_csv(\"../data/GAStech_email_node.csv\")\nGAStech_edges &lt;- read_csv(\"../data/GAStech_email_edge-v2.csv\")"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#reviewing-the-data",
+    "href": "handson/exercise7-part1.html#reviewing-the-data",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "2.3 Reviewing the data",
+    "text": "2.3 Reviewing the data\nFor GAStech_edges\n\n\nShow code\nglimpse(GAStech_edges)\n\n\nRows: 9,063\nColumns: 8\n$ source      &lt;dbl&gt; 43, 43, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 26, 26, 26…\n$ target      &lt;dbl&gt; 41, 40, 51, 52, 53, 45, 44, 46, 48, 49, 47, 54, 27, 28, 29…\n$ SentDate    &lt;chr&gt; \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\"…\n$ SentTime    &lt;time&gt; 08:39:00, 08:39:00, 08:58:00, 08:58:00, 08:58:00, 08:58:0…\n$ Subject     &lt;chr&gt; \"GT-SeismicProcessorPro Bug Report\", \"GT-SeismicProcessorP…\n$ MainSubject &lt;chr&gt; \"Work related\", \"Work related\", \"Work related\", \"Work rela…\n$ sourceLabel &lt;chr&gt; \"Sven.Flecha\", \"Sven.Flecha\", \"Kanon.Herrero\", \"Kanon.Herr…\n$ targetLabel &lt;chr&gt; \"Isak.Baza\", \"Lucas.Alcazar\", \"Felix.Resumir\", \"Hideki.Coc…\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThe output report for GAStech_edges shows that the SentDate field is being read as a character type instead of a proper date type.\nThis is incorrect. Before proceeding, we must convert SentDate back to the Date data type.\n\n\nFor GAStech_nodes\n\n\nShow code\nglimpse(GAStech_nodes)\n\n\nRows: 54\nColumns: 4\n$ id         &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 44, 45, 46, 8, 9, 10, 11, 12, 13, 14, …\n$ label      &lt;chr&gt; \"Mat.Bramar\", \"Anda.Ribera\", \"Rachel.Pantanal\", \"Linda.Lago…\n$ Department &lt;chr&gt; \"Administration\", \"Administration\", \"Administration\", \"Admi…\n$ Title      &lt;chr&gt; \"Assistant to CEO\", \"Assistant to CFO\", \"Assistant to CIO\",…"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#data-wrangling",
+    "href": "handson/exercise7-part1.html#data-wrangling",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "2.4 Data wrangling",
+    "text": "2.4 Data wrangling\n\n\nShow code\nGAStech_edges &lt;- GAStech_edges %&gt;%\n  mutate(SendDate = dmy(SentDate)) %&gt;%\n  mutate(Weekday = wday(SentDate,\n                        label = TRUE,\n                        abbr = FALSE))\n\n\nBoth dmy() and wday() are functions from the lubridate package, which simplifies working with dates and times in R.\n\nThe dmy() function converts the SentDate field into a proper Date type.\n\nThe wday() function extracts the day of the week. When label = TRUE, it returns the weekday as an ordered factor; with abbr = FALSE, the names are spelled out in full (e.g., Monday).\n\nUsing wday(), a new column called Weekday is created in the data frame, storing these values.\n\nThe values in the Weekday column are represented on an ordinal scale.\n\nNow, we display the reformatted data frame one more time\n\n\nShow code\nglimpse(GAStech_edges)\n\n\nRows: 9,063\nColumns: 10\n$ source      &lt;dbl&gt; 43, 43, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 26, 26, 26…\n$ target      &lt;dbl&gt; 41, 40, 51, 52, 53, 45, 44, 46, 48, 49, 47, 54, 27, 28, 29…\n$ SentDate    &lt;chr&gt; \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\", \"6/1/2014\"…\n$ SentTime    &lt;time&gt; 08:39:00, 08:39:00, 08:58:00, 08:58:00, 08:58:00, 08:58:0…\n$ Subject     &lt;chr&gt; \"GT-SeismicProcessorPro Bug Report\", \"GT-SeismicProcessorP…\n$ MainSubject &lt;chr&gt; \"Work related\", \"Work related\", \"Work related\", \"Work rela…\n$ sourceLabel &lt;chr&gt; \"Sven.Flecha\", \"Sven.Flecha\", \"Kanon.Herrero\", \"Kanon.Herr…\n$ targetLabel &lt;chr&gt; \"Isak.Baza\", \"Lucas.Alcazar\", \"Felix.Resumir\", \"Hideki.Coc…\n$ SendDate    &lt;date&gt; 2014-01-06, 2014-01-06, 2014-01-06, 2014-01-06, 2014-01-0…\n$ Weekday     &lt;ord&gt; Friday, Friday, Friday, Friday, Friday, Friday, Friday, Fr…"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#wrangling-attributes",
+    "href": "handson/exercise7-part1.html#wrangling-attributes",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "2.5 Wrangling attributes",
+    "text": "2.5 Wrangling attributes\nA closer look at the GAStech_edges data frame shows that it contains individual e‑mail flow records, which are not very effective for visualisation.\nTo make the data more useful, we will aggregate the records by date, sender, receiver, main subject, and day of the week.\n\n\nShow code\nGAStech_edges_aggregated &lt;- GAStech_edges %&gt;%\n  filter(MainSubject == \"Work related\") %&gt;%\n  group_by(source, target, Weekday) %&gt;%\n    summarise(Weight = n()) %&gt;%\n  filter(source!=target) %&gt;%\n  filter(Weight &gt; 1) %&gt;%\n  ungroup()\n\n\nIn this step, four functions from the dplyr package are applied:\n- filter()\n- group_by()\n- summarise()\n- ungroup()\nThe resulting data frame is named GAStech_edges_aggregated and a new field called Weight has also been added to this aggregated dataset\nNow, we display the GAStech_edges_aggregated data frame\n\n\nShow code\nglimpse(GAStech_edges_aggregated)\n\n\nRows: 1,372\nColumns: 4\n$ source  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ target  &lt;dbl&gt; 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6,…\n$ Weekday &lt;ord&gt; Sunday, Monday, Tuesday, Wednesday, Friday, Sunday, Monday, Tu…\n$ Weight  &lt;int&gt; 5, 2, 3, 4, 6, 5, 2, 3, 4, 6, 5, 2, 3, 4, 6, 5, 2, 3, 4, 6, 5,…"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#the-tbl_graph-object",
+    "href": "handson/exercise7-part1.html#the-tbl_graph-object",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "3.1 The tbl_graph object",
+    "text": "3.1 The tbl_graph object\nTwo functions from the tidygraph package can be used to create network objects:\n\ntbl_graph() -&gt; Creates a tbl_graph object directly from node and edge data frames.\nas_tbl_graph() -&gt; Converts existing network data or objects into a tbl_graph. It supports a wide range of input formats, including:\n\nA node data frame with an edge data frame\nBase R structures such as data frames, lists, and matrices\nigraph objects from the igraph package\nnetwork objects from the network package\nHierarchical structures like dendrogram and hclust from stats\nNode objects from data.tree\nPhylogenetic objects (phylo, evonet) from ape\nGraph structures (graphNEL, graphAM, graphBAM) from graph in Bioconductor"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#the-dplyr-verbs-in-tidygraph",
+    "href": "handson/exercise7-part1.html#the-dplyr-verbs-in-tidygraph",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "3.2 The dplyr verbs in tidygraph",
+    "text": "3.2 The dplyr verbs in tidygraph\nThe activate() verb in the tidygraph package acts as a switch between the node and edge tibbles within a tbl_graph object. Whichever tibble is active determines where subsequent dplyr verbs are applied. In other words, activate() lets you specify whether your manipulations target the nodes or the edges of the network.\niris_tree &lt;- iris_tree %&gt;%\n  activate(nodes) %&gt;%\n  mutate(Species = ifelse(leaf, as. character(iris$Species)[label], NA)) %&gt;%\n  activate(edges) %&gt;%\n  mutate(to_setose = .N()$Species[to] == 'setosa')\niris_tree\nWithin a tbl_graph object, you can use helper functions to access different parts of the network while performing manipulations:\n\n.N() -&gt; gives access to the node data when you are working with edges.\n.E() -&gt; provides the edge data directly.\n.G() -&gt; returns the entire tbl_graph object itself."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#using-tbl_graph-to-build-tidygraph-data-model",
+    "href": "handson/exercise7-part1.html#using-tbl_graph-to-build-tidygraph-data-model",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "3.3 Using tbl_graph to build tidygraph data model",
+    "text": "3.3 Using tbl_graph to build tidygraph data model\nWe will use tbl_graph() of tinygraph package to build a tidygraph’s network graph data frame\n\n\nShow code\nGAStech_graph &lt;- tbl_graph(nodes = GAStech_nodes,\n                           edges = GAStech_edges_aggregated, \n                           directed = TRUE)"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#displaying-the-output-of-tidygraphs-graph-object",
+    "href": "handson/exercise7-part1.html#displaying-the-output-of-tidygraphs-graph-object",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "3.4 Displaying the output of tidygraph’s graph object",
+    "text": "3.4 Displaying the output of tidygraph’s graph object\n\n\nShow code\nGAStech_graph\n\n\n# A tbl_graph: 54 nodes and 1372 edges\n#\n# A directed multigraph with 1 component\n#\n# Node Data: 54 × 4 (active)\n      id label               Department     Title                               \n   &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt;          &lt;chr&gt;                               \n 1     1 Mat.Bramar          Administration Assistant to CEO                    \n 2     2 Anda.Ribera         Administration Assistant to CFO                    \n 3     3 Rachel.Pantanal     Administration Assistant to CIO                    \n 4     4 Linda.Lagos         Administration Assistant to COO                    \n 5     5 Ruscella.Mies.Haber Administration Assistant to Engineering Group Mana…\n 6     6 Carla.Forluniau     Administration Assistant to IT Group Manager       \n 7     7 Cornelia.Lais       Administration Assistant to Security Group Manager \n 8    44 Kanon.Herrero       Security       Badging Office                      \n 9    45 Varja.Lagos         Security       Badging Office                      \n10    46 Stenig.Fusil        Security       Building Control                    \n# ℹ 44 more rows\n#\n# Edge Data: 1,372 × 4\n   from    to Weekday Weight\n  &lt;int&gt; &lt;int&gt; &lt;ord&gt;    &lt;int&gt;\n1     1     2 Sunday       5\n2     1     2 Monday       2\n3     1     2 Tuesday      3\n# ℹ 1,369 more rows\n\n\n\n\n\n\n\n\nTipData frame insights\n\n\n\nThe output shows that GAStech_graph is a tbl_graph object containing 54 nodes and 4,541 edges. It also displays the first six rows of the Node Data and the first three rows of the Edge Data.\nImportantly, the report indicates that the Node Data is currently active. This concept of an active tibble within a tbl_graph allows you to apply manipulations to either the node or edge data, but only one at a time."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#changing-the-active-object",
+    "href": "handson/exercise7-part1.html#changing-the-active-object",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "3.5 Changing the active object",
+    "text": "3.5 Changing the active object\nBy default, the nodes tibble is active in a tbl_graph object. We can switch the active tibble using the activate() function. For example, if you want to reorder the rows in the edges tibble so that those with the highest weight appear first, you would call activate(edges) followed by arrange().\n\n\nShow code\nGAStech_graph %&gt;%\n  activate(edges) %&gt;%\n  arrange(desc(Weight))\n\n\n# A tbl_graph: 54 nodes and 1372 edges\n#\n# A directed multigraph with 1 component\n#\n# Edge Data: 1,372 × 4 (active)\n    from    to Weekday   Weight\n   &lt;int&gt; &lt;int&gt; &lt;ord&gt;      &lt;int&gt;\n 1    40    41 Saturday      13\n 2    41    43 Monday        11\n 3    35    31 Tuesday       10\n 4    40    41 Monday        10\n 5    40    43 Monday        10\n 6    36    32 Sunday         9\n 7    40    43 Saturday       9\n 8    41    40 Monday         9\n 9    19    15 Wednesday      8\n10    35    38 Tuesday        8\n# ℹ 1,362 more rows\n#\n# Node Data: 54 × 4\n     id label           Department     Title           \n  &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;          &lt;chr&gt;           \n1     1 Mat.Bramar      Administration Assistant to CEO\n2     2 Anda.Ribera     Administration Assistant to CFO\n3     3 Rachel.Pantanal Administration Assistant to CIO\n# ℹ 51 more rows"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#plotting-a-basic-network-graph",
+    "href": "handson/exercise7-part1.html#plotting-a-basic-network-graph",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.1 Plotting a basic network graph",
+    "text": "4.1 Plotting a basic network graph\nThe following code chunk uses ggraph() together with geom_edge_link() and geom_node_point() to create a network graph from the GAStech_graph object\n\n\nShow code\nggraph(GAStech_graph) +\n  geom_edge_link() +\n  geom_node_point()\n\n\n\n\n\n\n\n\n\nThe core plotting function in ggraph is ggraph(). It requires two key inputs: the data to be visualised and the layout type to arrange the graph. Both arguments are built on the igraph framework, which means ggraph() can work with either an igraph object or a tbl_graph object."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#changing-the-default-network-graph-theme",
+    "href": "handson/exercise7-part1.html#changing-the-default-network-graph-theme",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.2 Changing the default network graph theme",
+    "text": "4.2 Changing the default network graph theme\nWe will use theme_graph() to remove the x and y axes\n\n\nShow code\ng &lt;- ggraph(GAStech_graph) + \n  geom_edge_link(aes()) +\n  geom_node_point(aes())\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\nggraph introduces a dedicated theme, theme_graph(), which provides defaults better suited for network visualisations than the standard ggplot theme. In addition to removing axes, grids, and borders, it also changes the font to Arial Narrow (though this can be overridden). We can apply the ggraph theme in two ways:\n\nSet it globally for a series of plots using set_graph_style() before plotting.\nApply it individually to each plot by adding theme_graph()"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#changing-the-color-of-the-plot",
+    "href": "handson/exercise7-part1.html#changing-the-color-of-the-plot",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.3 Changing the color of the plot",
+    "text": "4.3 Changing the color of the plot\nAnother feature that theme_graph can do is changing the coloring of the plot as shown below\n\n\nShow code\ng &lt;- ggraph(GAStech_graph) + \n  geom_edge_link(aes(colour = 'grey50')) +\n  geom_node_point(aes(colour = 'grey40'))\n\ng + theme_graph(background = 'grey10',\n                text_colour = 'white')"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#working-with-ggraphs-layouts",
+    "href": "handson/exercise7-part1.html#working-with-ggraphs-layouts",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.4 Working with ggraph’s layouts",
+    "text": "4.4 Working with ggraph’s layouts\nggraph supports a wide variety of layouts commonly used in network visualisation. These include:star, circle, nicely(default), dh, gem, graphopt, grid, mds, sphere, randomly, fr, kk, drl, lgl. The figures below show layouts supported by ggraph()\n\n\n\nfigure12\n\n\n These layouts gives us flexibility in how nodes and edges are arranged, making it easier to highlight different structural aspects of the network."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#fruchterman-and-reingold-layout",
+    "href": "handson/exercise7-part1.html#fruchterman-and-reingold-layout",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.5 Fruchterman and Reingold layout",
+    "text": "4.5 Fruchterman and Reingold layout\n\n\nShow code\ng &lt;- ggraph(GAStech_graph, \n            layout = \"fr\") +\n  geom_edge_link(aes()) +\n  geom_node_point(aes())\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\nlayout argument is used to define the layout to be used."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#modifying-network-nodes",
+    "href": "handson/exercise7-part1.html#modifying-network-nodes",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.6 Modifying network nodes",
+    "text": "4.6 Modifying network nodes\nWe will color eahc node by referring to their respective departments\n\n\nShow code\ng &lt;- ggraph(GAStech_graph, \n            layout = \"nicely\") + \n  geom_edge_link(aes()) +\n  geom_node_point(aes(colour = Department, \n                      size = 3))\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\nThe geom_node_point() function in ggraph works much like geom_point() in ggplot2. It provides a straightforward way to plot nodes, allowing you to vary their shapes, colors, and sizes. In the code chunks above, the aesthetics applied were color and size."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#modifying-edges",
+    "href": "handson/exercise7-part1.html#modifying-edges",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "4.7 Modifying edges",
+    "text": "4.7 Modifying edges\nWe will adjust the thickness of the edges mapped with the Weight variable\n\n\nShow code\ng &lt;- ggraph(GAStech_graph, \n            layout = \"nicely\") +\n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department), \n                  size = 3)\n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\nThe geom_edge_link() function draws edges in their simplest form, straight lines connecting the start and end nodes. However, it can also be customised. In the example above, the width argument was mapped to the Weight attribute so that line thickness reflects edge strength, while the alpha argument was used to adjust line opacity."
+  },
+  {
+    "objectID": "handson/exercise8.html",
+    "href": "handson/exercise8.html",
+    "title": "Hands-On Exercise8",
+    "section": "",
+    "text": "Time-oriented data presents a unique set of challenges for visualization. Unlike standard categorical or numerical data, time-series data must convey patterns, trends, and cycles in a way that is both accurate and easy to interpret. In this hands-on exercise, we explore several visualization methods suited for time-oriented data, including the calendar heatmap, cycle plot, horizon chart and slopegraph"
+  },
+  {
+    "objectID": "handson/exercise8.html#check-install-and-launch-packages",
+    "href": "handson/exercise8.html#check-install-and-launch-packages",
+    "title": "Hands-On Exercise8",
+    "section": "2.1 Check, Install and Launch Packages",
+    "text": "2.1 Check, Install and Launch Packages\n\n\nShow code\npacman::p_load(scales, viridis, lubridate, ggthemes,\n               gridExtra, readxl, knitr, data.table,\n               CGPfunctions, ggHoriPlot, tidyverse)\n# install.packages(\"devtools\")\n# devtools::install_github(\"ibecav/CGPfunctions\", \n                        #build_vignettes = TRUE,\n                        #upgrade = \"ask\")\n\n\nThe packages used in this exercise are explained below:\n\nscales: Provides functions for formatting axis labels and legend keys in ggplot2.\nviridis: Offers perceptually uniform color palettes that are colorblind-friendly and print well in grayscale.\nlubridate: Simplifies working with dates and times in R, making it easier to parse, manipulate, and extract time components.\nggthemes: An extension of ggplot2 that provides additional themes, scales, and geoms to enhance plot styling.\ngridExtra: Allows multiple ggplot2 plots to be arranged side by side or in a grid layout.\nreadxl: Enables reading of Excel files directly into R without requiring external dependencies.\nknitr: A general-purpose tool for dynamic report generation, used here for rendering clean tables with kable().\ndata.table: Provides a fast and memory-efficient extension of R’s data frame for handling large datasets.\nCGPfunctions: Contains the newggslopegraph() function used for plotting slopegraphs.\nggHoriPlot: Enables the creation of horizon charts for compact time-series visualization.\ntidyverse: A collection of modern R packages built to support data science workflows and effective visual communication."
+  },
+  {
+    "objectID": "handson/exercise8.html#the-data",
+    "href": "handson/exercise8.html#the-data",
+    "title": "Hands-On Exercise8",
+    "section": "3.1 The Data",
+    "text": "3.1 The Data\neventlog.csv will be used. This dataset consists of 199,999 rows of time-series cyber attack records by country."
+  },
+  {
+    "objectID": "handson/exercise8.html#importing-the-data",
+    "href": "handson/exercise8.html#importing-the-data",
+    "title": "Hands-On Exercise8",
+    "section": "3.2 Importing the Data",
+    "text": "3.2 Importing the Data\nThe code chunk below imports eventlog.csv into the R environment and stores it as a data frame called attacks.\n\n\nShow code\nattacks &lt;- read_csv(\"../data/eventlog.csv\")"
+  },
+  {
+    "objectID": "handson/exercise8.html#examining-the-data-structure",
+    "href": "handson/exercise8.html#examining-the-data-structure",
+    "title": "Hands-On Exercise8",
+    "section": "3.3 Examining the Data Structure",
+    "text": "3.3 Examining the Data Structure\nIt is always good practice to examine the imported data frame before any further analysis. The kable() function can be used to review the structure of the imported data frame.\n\n\nShow code\nkable(head(attacks))\n\n\n\n\n\ntimestamp\nsource_country\ntz\n\n\n\n\n2015-03-12 15:59:16\nCN\nAsia/Shanghai\n\n\n2015-03-12 16:00:48\nFR\nEurope/Paris\n\n\n2015-03-12 16:02:26\nCN\nAsia/Shanghai\n\n\n2015-03-12 16:02:38\nUS\nAmerica/Chicago\n\n\n2015-03-12 16:03:22\nCN\nAsia/Shanghai\n\n\n2015-03-12 16:03:45\nCN\nAsia/Shanghai\n\n\n\n\n\nThe dataset has three columns: timestamp, source_country, and tz.\n\ntimestamp stores date-time values in POSIXct format.\nsource_country stores the origin of the attack in ISO 3166-1 alpha-2 country code format.\ntz stores the time zone of the source IP address."
+  },
+  {
+    "objectID": "handson/exercise8.html#data-preparation",
+    "href": "handson/exercise8.html#data-preparation",
+    "title": "Hands-On Exercise8",
+    "section": "3.4 Data Preparation",
+    "text": "3.4 Data Preparation\nStep 1: Deriving weekday and hour of day fields\nBefore plotting the calendar heatmap, two new fields, wkday and hour, need to be derived. The function below handles this task.\n\n\nShow code\nmake_hr_wkday &lt;- function(ts, sc, tz) {\n  real_times &lt;- ymd_hms(ts,\n                        tz = tz[1],\n                        quiet = TRUE)\n  dt &lt;- data.table(source_country = sc,\n                   wkday = weekdays(real_times),\n                   hour = hour(real_times))\n  return(dt)\n}\n\n\nNote:\n\nymd_hms() and hour() are from the lubridate package.\nweekdays() is a base R function.\n\nStep 2: Deriving the attacks tibble data frame\n\n\nShow code\nwkday_levels &lt;- c('Saturday', 'Friday',\n                  'Thursday', 'Wednesday',\n                  'Tuesday', 'Monday',\n                  'Sunday')\n\nattacks &lt;- attacks %&gt;%\n  group_by(tz) %&gt;%\n  do(make_hr_wkday(.$timestamp,\n                   .$source_country,\n                   .$tz)) %&gt;%\n  ungroup() %&gt;%\n  mutate(wkday = factor(\n    wkday, levels = wkday_levels),\n    hour  = factor(\n      hour, levels = 0:23))\n\n\nNote: In addition to extracting the necessary data into the attacks data frame, mutate() from the dplyr package is used to convert the wkday and hour fields into factor so they are ordered correctly when plotting.\nThe table below shows the tidy tibble after processing:\n\n\nShow code\nkable(head(attacks))\n\n\n\n\n\ntz\nsource_country\nwkday\nhour\n\n\n\n\nAfrica/Cairo\nBG\nSaturday\n20\n\n\nAfrica/Cairo\nTW\nSunday\n6\n\n\nAfrica/Cairo\nTW\nSunday\n8\n\n\nAfrica/Cairo\nCN\nSunday\n11\n\n\nAfrica/Cairo\nUS\nSunday\n15\n\n\nAfrica/Cairo\nCA\nMonday\n11"
+  },
+  {
+    "objectID": "handson/exercise8.html#building-the-calendar-heatmap",
+    "href": "handson/exercise8.html#building-the-calendar-heatmap",
+    "title": "Hands-On Exercise8",
+    "section": "3.5 Building the Calendar Heatmap",
+    "text": "3.5 Building the Calendar Heatmap\n\nThe plotThe code chunkThings to learn from the code chunk:\n\n\n\n\n\n\n\n\n\n\n\n\n\ngrouped &lt;- attacks %&gt;%\n  count(wkday, hour) %&gt;%\n  ungroup() %&gt;%\n  na.omit()\n\nggplot(grouped,\n       aes(hour,\n           wkday,\n           fill = n)) +\ngeom_tile(color = \"white\",\n          size = 0.1) +\ntheme_tufte(base_family = \"Helvetica\") +\ncoord_equal() +\nscale_fill_gradient(name = \"# of attacks\",\n                    low = \"sky blue\",\n                    high = \"dark blue\") +\nlabs(x = NULL,\n     y = NULL,\n     title = \"Attacks by weekday and time of day\") +\ntheme(axis.ticks = element_blank(),\n      plot.title = element_text(hjust = 0.5),\n      legend.title = element_text(size = 8),\n      legend.text = element_text(size = 6))\n\n\n\nA tibble data table called grouped is derived by aggregating attacks by wkday and hour fields.\nA new field called n is derived using group_by() and count() functions.\nna.omit() is used to exclude missing values.\ngeom_tile() plots tiles (grids) at each x and y position. The color and size arguments specify the border color and line size of the tiles.\ntheme_tufte() from the ggthemes package removes unnecessary chart junk.\ncoord_equal() ensures the plot has an aspect ratio of 1:1.\nscale_fill_gradient() creates a two-color gradient (low to high)."
+  },
+  {
+    "objectID": "handson/exercise8.html#building-multiple-calendar-heatmaps",
+    "href": "handson/exercise8.html#building-multiple-calendar-heatmaps",
+    "title": "Hands-On Exercise8",
+    "section": "3.6 Building Multiple Calendar Heatmaps",
+    "text": "3.6 Building Multiple Calendar Heatmaps\nChallenge: Building multiple heatmaps for the top four countries with the highest number of attacks.\nStep 1: Deriving the attack by country object\nTo identify the top 4 countries with the highest number of attacks, we need to count the number of attacks by country, calculate the percentage of attacks per country, and save the results in a tibble data frame.\n\n\nShow code\nattacks_by_country &lt;- count(\n  attacks, source_country) %&gt;%\n  mutate(percent = percent(n/sum(n))) %&gt;%\n  arrange(desc(n))\n\n\nStep 2: Preparing the tidy data frame\nIn this step, we extract the attack records of the top 4 countries from the attacks data frame and save the data in a new tibble data frame called top4_attacks.\n\n\nShow code\ntop4 &lt;- attacks_by_country$source_country[1:4]\ntop4_attacks &lt;- attacks %&gt;%\n  filter(source_country %in% top4) %&gt;%\n  count(source_country, wkday, hour) %&gt;%\n  ungroup() %&gt;%\n  mutate(source_country = factor(\n    source_country, levels = top4)) %&gt;%\n  na.omit()"
+  },
+  {
+    "objectID": "handson/exercise8.html#plotting-multiple-calendar-heatmaps",
+    "href": "handson/exercise8.html#plotting-multiple-calendar-heatmaps",
+    "title": "Hands-On Exercise8",
+    "section": "3.7 Plotting Multiple Calendar Heatmaps",
+    "text": "3.7 Plotting Multiple Calendar Heatmaps\nStep 3: Plotting the Multiple Calendar Heatmap using ggplot2\n\nThe plotThe code chunk\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(top4_attacks,\n       aes(hour,\n           wkday,\n           fill = n)) +\n  geom_tile(color = \"white\",\n          size = 0.1) +\n  theme_tufte(base_family = \"Helvetica\") +\n  coord_equal() +\n  scale_fill_gradient(name = \"# of attacks\",\n                    low = \"sky blue\",\n                    high = \"dark blue\") +\n  facet_wrap(~source_country, ncol = 2) +\n  labs(x = NULL, y = NULL,\n     title = \"Attacks on top 4 countries by weekday and time of day\") +\n  theme(axis.ticks = element_blank(),\n        axis.text.x = element_text(size = 7),\n        plot.title = element_text(hjust = 0.5),\n        legend.title = element_text(size = 8),\n        legend.text = element_text(size = 6))\nfacet_wrap(~source_country, ncol = 2) splits the heatmap into separate panels for each of the top 4 countries, arranged in a 2-column layout. This makes it easy to compare attack patterns across countries side by side."
+  },
+  {
+    "objectID": "handson/exercise8.html#step-1-data-import",
+    "href": "handson/exercise8.html#step-1-data-import",
+    "title": "Hands-On Exercise8",
+    "section": "4.1 Step 1: Data Import",
+    "text": "4.1 Step 1: Data Import\nFor this exercise, arrivals_by_air.xlsx will be used. The code chunk below imports the file using read_excel() from the readxl package and saves it as a tibble called air.\n\n\nShow code\nair &lt;- read_excel(\"../data/arrivals_by_air.xlsx\")"
+  },
+  {
+    "objectID": "handson/exercise8.html#step-2-deriving-month-and-year-fields",
+    "href": "handson/exercise8.html#step-2-deriving-month-and-year-fields",
+    "title": "Hands-On Exercise8",
+    "section": "4.2 Step 2: Deriving Month and Year Fields",
+    "text": "4.2 Step 2: Deriving Month and Year Fields\nTwo new fields, month and year, are derived from the Month-Year field.\n\n\nShow code\nair$month &lt;- factor(month(air$`Month-Year`),\n                    levels=1:12,\n                    labels=month.abb,\n                    ordered=TRUE)\nair$year &lt;- year(ymd(air$`Month-Year`))\n\n\nmonth() from lubridate extracts the numeric month from the date, then factor() converts it into an ordered factor with abbreviated month labels. year() combined with ymd() extracts the four-digit year from the date column."
+  },
+  {
+    "objectID": "handson/exercise8.html#step-3-extracting-the-target-country",
+    "href": "handson/exercise8.html#step-3-extracting-the-target-country",
+    "title": "Hands-On Exercise8",
+    "section": "4.3 Step 3: Extracting the Target Country",
+    "text": "4.3 Step 3: Extracting the Target Country\nThe code chunk below filters the data to retain only records for Vietnam, from 2010 onwards.\n\n\nShow code\nVietnam &lt;- air %&gt;%\n  select(`Vietnam`,\n         month,\n         year) %&gt;%\n  filter(year &gt;= 2010)"
+  },
+  {
+    "objectID": "handson/exercise8.html#step-4-computing-year-average-arrivals-by-month",
+    "href": "handson/exercise8.html#step-4-computing-year-average-arrivals-by-month",
+    "title": "Hands-On Exercise8",
+    "section": "4.4 Step 4: Computing Year Average Arrivals by Month",
+    "text": "4.4 Step 4: Computing Year Average Arrivals by Month\nThe code chunk below uses group_by() and summarise() from dplyr to compute the average yearly arrivals by month.\n\n\nShow code\nhline.data &lt;- Vietnam %&gt;%\n  group_by(month) %&gt;%\n  summarise(avgvalue = mean(`Vietnam`))\n\n\ngroup_by(month) groups the Vietnam data by each calendar month so the average is calculated separately for each month across all years. summarise(avgvalue = mean(...)) then computes the mean number of arrivals for each month group. The result, stored in hline.data, will be used to draw a reference line representing the monthly average on the cycle plot."
+  },
+  {
+    "objectID": "handson/exercise8.html#step-5-plotting-the-cycle-plot",
+    "href": "handson/exercise8.html#step-5-plotting-the-cycle-plot",
+    "title": "Hands-On Exercise8",
+    "section": "4.5 Step 5: Plotting the Cycle Plot",
+    "text": "4.5 Step 5: Plotting the Cycle Plot\n\nThe plotThe code chunk\n\n\n\n\n\n\n\n\n\n\n\n&lt;theme&gt; List of 1\n $ axis.text.x: &lt;ggplot2::element_blank&gt;\n @ complete: logi FALSE\n @ validate: logi TRUE\n\n\nThe cycle plot shows visitor arrival trends from Vietnam for each calendar month from 2010 to 2019. The black lines trace year-on-year changes within each month, while the red dashed horizontal line marks the long-run monthly average. Months with lines consistently above the red line indicate periods of above-average arrivals, making it easy to spot seasonal patterns and growth trends across the decade.\n\n\nggplot() +\n  geom_line(data=Vietnam,\n            aes(x=year,\n                y=`Vietnam`,\n                group=month),\n            colour=\"black\") +\n  geom_hline(aes(yintercept=avgvalue),\n             data=hline.data,\n             linetype=6,\n             colour=\"red\",\n             size=0.5) +\n  facet_grid(~month) +\n  labs(axis.text.x = element_blank(),\n       title = \"Visitor arrivals from Vietnam by air, Jan 2010-Dec 2019\") +\n  xlab(\"\") +\n  ylab(\"No. of Visitors\") +\n  theme_tufte(base_family = \"Helvetica\")\ngeom_line() draws a line for each month’s yearly trend using Vietnam as the data source.\ngeom_hline() adds a horizontal reference line at the average value for each month, drawn from the hline.data summary table.\nfacet_grid(~month) splits the plot into one panel per calendar month, arranged in a single row.\ntheme_tufte() applies a minimal chart style that removes unnecessary grid lines and chart borders, keeping the focus on the data."
+  },
+  {
+    "objectID": "handson/exercise8.html#step-1-data-import-1",
+    "href": "handson/exercise8.html#step-1-data-import-1",
+    "title": "Hands-On Exercise8",
+    "section": "5.1 Step 1: Data Import",
+    "text": "5.1 Step 1: Data Import\nThe code chunk below imports the rice dataset into the R environment.\n\n\nShow code\nrice &lt;- read_csv(\"../data/rice.csv\")"
+  },
+  {
+    "objectID": "handson/exercise8.html#step-2-plotting-the-slopegraph",
+    "href": "handson/exercise8.html#step-2-plotting-the-slopegraph",
+    "title": "Hands-On Exercise8",
+    "section": "5.2 Step 2: Plotting the Slopegraph",
+    "text": "5.2 Step 2: Plotting the Slopegraph\n\nThe plotThe code chunk\n\n\n\n\n\n\n\n\n\n\n\nThe slopegraph compares rice yield across the top 11 Asian countries between 1961 and 1980. Each line represents a country, with the slope indicating the direction and magnitude of change. Countries with steep upward slopes saw the greatest improvements in yield over this period, while flatter or downward slopes indicate stagnation or decline.\n\n\nrice %&gt;%\n  mutate(Year = factor(Year)) %&gt;%\n  filter(Year %in% c(1961, 1980)) %&gt;%\n  newggslopegraph(Year, Yield, Country,\n                Title = \"Rice Yield of Top 11 Asian Countries\",\n                SubTitle = \"1961-1980\",\n                Caption = \"Prepared by: Dr. Kam Tin Seong\")\nmutate(Year = factor(Year)) converts the Year column from a numeric type to a factor. This step is important for effective data visualization design, as newggslopegraph() requires the time variable to be a factor in order to define the left and right endpoints of the slopegraph correctly.\nfilter(Year %in% c(1961, 1980)) retains only records for the two years of interest, so the slopegraph displays just the start and end points of the comparison period.\nnewggslopegraph() takes the year, yield, and country as its main arguments, and accepts optional parameters for the title, subtitle, and caption of the chart."
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#working-with-facet_edges",
+    "href": "handson/exercise7-part1.html#working-with-facet_edges",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "5.1 Working with facet_edges()",
+    "text": "5.1 Working with facet_edges()\n\n\nShow code\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph, \n            layout = \"nicely\") + \n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department), \n                  size = 2)\n\ng + facet_edges(~Weekday)\n\n\n\n\n\n\n\n\n\nNow, we will use theme() to change the position of the legend\n\n\nShow code\nset_graph_style()\n\ng &lt;- ggraph(GAStech_graph, \n            layout = \"nicely\") + \n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department), \n                  size = 2) +\n  theme(legend.position = 'bottom')\n  \ng + facet_edges(~Weekday)"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#working-with-facet_nodes",
+    "href": "handson/exercise7-part1.html#working-with-facet_nodes",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "6.1 Working with facet_nodes()",
+    "text": "6.1 Working with facet_nodes()\n\n\nShow code\ng &lt;- ggraph(GAStech_graph, \n            layout = \"nicely\") + \n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department), \n                  size = 2)\n  \ng + facet_nodes(~Department)+\n  th_foreground(foreground = \"grey80\",  \n                border = TRUE) +\n  theme(legend.position = 'bottom')"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#computing-centrality-indices",
+    "href": "handson/exercise7-part1.html#computing-centrality-indices",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "7.1 Computing centrality indices",
+    "text": "7.1 Computing centrality indices\nCentrality measures are statistical indices used to describe how important individual actors are within a network. Four well‑known measures are: degree, betweenness, closeness, and eigenvector.\n\n\nShow code\ng &lt;- GAStech_graph %&gt;%\n  mutate(betweenness_centrality = centrality_betweenness()) %&gt;%\n  ggraph(layout = \"fr\") + \n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department,\n            size=betweenness_centrality))\ng + theme_graph()\n\n\n\n\n\n\n\n\n\nIn this workflow, the mutate() function from dplyr is used to perform the calculation. The actual algorithm applied is centrality_betweenness() from tidygraph, which computes the betweenness centrality values for the network"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#visualising-netowork-metrics",
+    "href": "handson/exercise7-part1.html#visualising-netowork-metrics",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "7.2 Visualising netowork metrics",
+    "text": "7.2 Visualising netowork metrics\nStarting with ggraph v2.0, algorithms from tidygraph, such as centrality measures—can be called directly inside ggraph() plots. This means you no longer need to precompute and store derived node or edge attributes (like centrality scores) on the graph before using them in a visualisation\n\n\nShow code\ng &lt;- GAStech_graph %&gt;%\n  ggraph(layout = \"fr\") + \n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(colour = Department, \n                      size = centrality_betweenness()))\ng + theme_graph()"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#visualising-community",
+    "href": "handson/exercise7-part1.html#visualising-community",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "7.3 Visualising community",
+    "text": "7.3 Visualising community\nThe tidygraph package inherits many of the community detection algorithms from igraph and makes them directly available. These include:\n\nEdge betweenness (group_edge_betweenness)\nLeading eigenvector (group_leading_eigen)\nFast greedy (group_fast_greedy)\nLouvain (group_louvain)\nWalktrap (group_walktrap)\nLabel propagation (group_label_prop)\nInfoMAP (group_infomap)\nSpinglass (group_spinglass)\nOptimal (group_optimal)\n\nSome of these algorithms account for direction or weight in the network, while others ignore them. For more details, refer to the documentation on community detection functions in tidygraph.\n\n\nShow code\ng &lt;- GAStech_graph %&gt;%\n  mutate(community = as.factor(\n    group_edge_betweenness(\n      weights = Weight, \n      directed = TRUE))) %&gt;%\n  ggraph(layout = \"fr\") + \n  geom_edge_link(\n    aes(\n      width=Weight), \n    alpha=0.2) +\n  scale_edge_width(\n    range = c(0.1, 5)) +\n  geom_node_point(\n    aes(colour = community))  \n\ng + theme_graph()\n\n\n\n\n\n\n\n\n\nThe code chunk below visualises using the ggforce() and concaveman packages\n\n\nShow code\ng &lt;- GAStech_graph %&gt;%\n  activate(nodes) %&gt;%\n  mutate(community = as.factor(\n    group_optimal(weights = Weight)),\n         betweenness_measure = centrality_betweenness()) %&gt;%\n  ggraph(layout = \"fr\") +\n  geom_mark_hull(\n    aes(x, y, \n        group = community, \n        fill = community),  \n    alpha = 0.2,  \n    expand = unit(0.3, \"cm\"),  # Expand\n    radius = unit(0.3, \"cm\")  # Smoothness\n  ) + \n  geom_edge_link(aes(width=Weight), \n                 alpha=0.2) +\n  scale_edge_width(range = c(0.1, 5)) +\n  geom_node_point(aes(fill = Department,\n                      size = betweenness_measure),\n                      color = \"black\",\n                      shape = 21)\n  \ng + theme_graph()"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#data-preparation",
+    "href": "handson/exercise7-part1.html#data-preparation",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "8.1 Data preparation",
+    "text": "8.1 Data preparation\n\n\nShow code\nGAStech_edges_aggregated &lt;- GAStech_edges %&gt;%\n  left_join(GAStech_nodes, by = c(\"sourceLabel\" = \"label\")) %&gt;%\n  rename(from = id) %&gt;%\n  left_join(GAStech_nodes, by = c(\"targetLabel\" = \"label\")) %&gt;%\n  rename(to = id) %&gt;%\n  filter(MainSubject == \"Work related\") %&gt;%\n  group_by(from, to) %&gt;%\n    summarise(weight = n()) %&gt;%\n  filter(from!=to) %&gt;%\n  filter(weight &gt; 1) %&gt;%\n  ungroup()"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#plotting-the-simplest-interactive-graph",
+    "href": "handson/exercise7-part1.html#plotting-the-simplest-interactive-graph",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "8.2 Plotting the simplest interactive graph",
+    "text": "8.2 Plotting the simplest interactive graph\n\n\nShow code\nvisNetwork(GAStech_nodes, \n           GAStech_edges_aggregated)"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#working-with-layout",
+    "href": "handson/exercise7-part1.html#working-with-layout",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "8.3 Working with layout",
+    "text": "8.3 Working with layout\n\n\nShow code\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\")"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#working-with-visual-attributes---nodes",
+    "href": "handson/exercise7-part1.html#working-with-visual-attributes---nodes",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "8.4 Working with visual attributes - Nodes",
+    "text": "8.4 Working with visual attributes - Nodes\nIn visNetwork, the function looks for a field named group in the nodes data. Nodes are then coloured automatically according to the values in this field.\nIn the example code, the Department column was renamed to group so that node colours reflect departmental membership\n\n\nShow code\nGAStech_nodes &lt;- GAStech_nodes %&gt;%\n  rename(group = Department) \n\n\nNodes are shaded automatically when a group field is present in the nodes data. Each category in the group field is assigned a unique colour, making it easy to distinguish different groups visually. In the example code below, this behaviour is demonstrated by mapping categories in the group column to distinct node colours.\n\n\nShow code\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#working-with-visual-attributes---edges",
+    "href": "handson/exercise7-part1.html#working-with-visual-attributes---edges",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "8.5 Working with visual attributes - Edges",
+    "text": "8.5 Working with visual attributes - Edges\nThe visEdges() function is used to style and symbolise the edges of the network:\n-The arrows argument specifies where arrows should be placed along the edges. - The smooth argument allows edges to be drawn as curved lines rather than straight, giving the graph a more fluid appearance\n\n\nShow code\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visEdges(arrows = \"to\", \n           smooth = list(enabled = TRUE, \n                         type = \"curvedCW\")) %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)"
+  },
+  {
+    "objectID": "handson/exercise7-part1.html#creating-an-interactive-graph",
+    "href": "handson/exercise7-part1.html#creating-an-interactive-graph",
+    "title": "Part A Modelling, Visualizing and Analyzing Network Data",
+    "section": "8.6 Creating an interactive graph",
+    "text": "8.6 Creating an interactive graph\nvisOptions() function in visNetwork adds interactive features to the visualisation.\n\nThe highlightNearest argument highlights the nearest nodes when a node is clicked.\nThe nodesIdSelection argument creates an HTML select element, allowing users to choose nodes by their ID for quick navigation.\n\n\n\nShow code\nvisNetwork(GAStech_nodes,\n           GAStech_edges_aggregated) %&gt;%\n  visIgraphLayout(layout = \"layout_with_fr\") %&gt;%\n  visOptions(highlightNearest = TRUE,\n             nodesIdSelection = TRUE) %&gt;%\n  visLegend() %&gt;%\n  visLayout(randomSeed = 123)"
   }
 ]

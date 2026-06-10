@@ -1,5 +1,5 @@
 ---
-title: "Hands-On Exercise5"
+title: "Hands-On Exercise7"
 format: html
 editor: visual
 author: "Anabelle Eveleen T"
@@ -12,3 +12,9 @@ execute:
   # freeze: true
 ---
 
+In this exercise, we will explore methods for **Modelling, Visualizing and Analysing Network Data** and extend our study to **Visualizing and Analyzing Text Data with R: tidytext methods**.
+
+This exercise is divided into two parts. Use the links below to access each section:
+
+-   [Part A, Modelling, Visualizing and Analyzing Network Data](exercise7-part1.qmd)
+-   [Part B, Visualizing and Analyzing Text Data with R: tidytext methods](exercise7-part2.qmd)

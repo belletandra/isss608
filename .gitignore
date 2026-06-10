@@ -3,3 +3,4 @@
 /data
 # ignore R session files
 .RDataTmp
+.Rproj.user
