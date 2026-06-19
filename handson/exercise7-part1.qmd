@@ -15,6 +15,7 @@ execute:
   warning: false
   # freeze: true
 ---
+
 # Overview
 
 In this hands‑on exercise, we will explore how to model, analyse, and visualise network data
@@ -152,11 +153,12 @@ Two functions from the `tidygraph` package can be used to create network objects
     -   Phylogenetic objects (phylo, evonet) from ape
 
     -   Graph structures (graphNEL, graphAM, graphBAM) from graph in Bioconductor
-    
+
 ## The dplyr verbs in tidygraph
+
 The *activate()* verb in the `tidygraph` package acts as a switch between the node and edge tibbles within a **tbl_graph** object. Whichever tibble is active determines where subsequent dplyr verbs are applied. In other words, activate() lets you specify whether your manipulations target the nodes or the edges of the network.
 
-```r
+``` r
 iris_tree <- iris_tree %>%
   activate(nodes) %>%
   mutate(Species = ifelse(leaf, as. character(iris$Species)[label], NA)) %>%
@@ -164,14 +166,17 @@ iris_tree <- iris_tree %>%
   mutate(to_setose = .N()$Species[to] == 'setosa')
 iris_tree
 ```
+
 Within a **tbl_graph** object, you can use helper functions to access different parts of the network while performing manipulations:
 
-- .N() -> gives access to the node data when you are working with edges.
-- .E() -> provides the edge data directly.
-- .G() -> returns the entire tbl_graph object itself.
+-   .N() -\> gives access to the node data when you are working with edges.
+-   .E() -\> provides the edge data directly.
+-   .G() -\> returns the entire tbl_graph object itself.
 
 ## Using tbl_graph to build tidygraph data model
+
 We will use `tbl_graph()` of tinygraph package to build a tidygraph's network graph data frame
+
 ```{r}
 GAStech_graph <- tbl_graph(nodes = GAStech_nodes,
                            edges = GAStech_edges_aggregated, 
@@ -179,16 +184,19 @@ GAStech_graph <- tbl_graph(nodes = GAStech_nodes,
 ```
 
 ## Displaying the output of tidygraph's graph object
+
 ```{r}
 GAStech_graph
 ```
-::: {.callout-tip title="Data frame insights"}
-The output shows that `GAStech_graph` is a **tbl_graph** object containing 54 nodes and 4,541 edges. It also displays the first six rows of the **Node Data** and the first three rows of the **Edge Data**.  
 
-Importantly, the report indicates that the **Node Data** is currently active. This concept of an *active tibble* within a `tbl_graph` allows you to apply manipulations to either the node or edge data, but only one at a time.  
+::: {.callout-tip title="Data frame insights"}
+The output shows that `GAStech_graph` is a **tbl_graph** object containing 54 nodes and 4,541 edges. It also displays the first six rows of the **Node Data** and the first three rows of the **Edge Data**.
+
+Importantly, the report indicates that the **Node Data** is currently active. This concept of an *active tibble* within a `tbl_graph` allows you to apply manipulations to either the node or edge data, but only one at a time.
 :::
 
 ## Changing the active object
+
 By default, the nodes tibble is active in a tbl_graph object. We can switch the active tibble using the activate() function. For example, if you want to reorder the rows in the edges tibble so that those with the highest weight appear first, you would call activate(edges) followed by arrange().
 
 ```{r}
@@ -196,14 +204,17 @@ GAStech_graph %>%
   activate(edges) %>%
   arrange(desc(Weight))
 ```
+
 # Plotting static network graphs using ggraph package
+
 `ggraph` is an extension of *ggplot2*, which makes it easy to apply familiar ggplot skills to the design of network graphs. Like all network visualisations, a `ggraph` plot is built around three main components:
 
-- Nodes
-- Edges
-- Layouts
+-   Nodes
+-   Edges
+-   Layouts
 
 ## Plotting a basic network graph
+
 The following code chunk uses *ggraph()* together with *geom_edge_link()* and *geom_node_point()* to create a network graph from the **GAStech_graph** object
 
 ```{r}
@@ -211,9 +222,11 @@ ggraph(GAStech_graph) +
   geom_edge_link() +
   geom_node_point()
 ```
+
 The core plotting function in ggraph is `ggraph()`. It requires two key inputs: the data to be visualised and the layout type to arrange the graph. Both arguments are built on the *igraph* framework, which means ggraph() can work with either an *igraph* object or a *tbl_graph* object.
 
 ## Changing the default network graph theme
+
 We will use `theme_graph()` to remove the x and y axes
 
 ```{r}
@@ -223,13 +236,14 @@ g <- ggraph(GAStech_graph) +
 
 g + theme_graph()
 ```
-*ggraph* introduces a dedicated theme, `theme_graph()`, which provides defaults better suited for network visualisations than the standard ggplot theme. In addition to removing axes, grids, and borders, it also changes the font to Arial Narrow (though this can be overridden).
-We can apply the ggraph theme in two ways:
 
-- Set it globally for a series of plots using `set_graph_style()` before plotting.
-- Apply it individually to each plot by adding `theme_graph()`
+*ggraph* introduces a dedicated theme, `theme_graph()`, which provides defaults better suited for network visualisations than the standard ggplot theme. In addition to removing axes, grids, and borders, it also changes the font to Arial Narrow (though this can be overridden). We can apply the ggraph theme in two ways:
+
+-   Set it globally for a series of plots using `set_graph_style()` before plotting.
+-   Apply it individually to each plot by adding `theme_graph()`
 
 ## Changing the color of the plot
+
 Another feature that `theme_graph` can do is changing the coloring of the plot as shown below
 
 ```{r}
@@ -242,14 +256,15 @@ g + theme_graph(background = 'grey10',
 ```
 
 ## Working with ggraph's layouts
-ggraph supports a wide variety of layouts commonly used in network visualisation. These include:star, circle, nicely(default), dh, gem, graphopt, grid, mds, sphere, randomly, fr, kk, drl, lgl. The figures below  show layouts supported by `ggraph()`
+
+ggraph supports a wide variety of layouts commonly used in network visualisation. These include:star, circle, nicely(default), dh, gem, graphopt, grid, mds, sphere, randomly, fr, kk, drl, lgl. The figures below show layouts supported by `ggraph()`
 
 ![figure12](../figures/image12.png)
 
-![figure13](../figures/image13.png)
-These layouts gives us flexibility in how nodes and edges are arranged, making it easier to highlight different structural aspects of the network.
+![figure13](../figures/image13.png) These layouts gives us flexibility in how nodes and edges are arranged, making it easier to highlight different structural aspects of the network.
 
 ## Fruchterman and Reingold layout
+
 ```{r}
 g <- ggraph(GAStech_graph, 
             layout = "fr") +
@@ -258,10 +273,13 @@ g <- ggraph(GAStech_graph,
 
 g + theme_graph()
 ```
+
 **layout** argument is used to define the layout to be used.
 
 ## Modifying network nodes
+
 We will color eahc node by referring to their respective departments
+
 ```{r}
 g <- ggraph(GAStech_graph, 
             layout = "nicely") + 
@@ -275,7 +293,9 @@ g + theme_graph()
 The `geom_node_point()` function in *ggraph* works much like `geom_point()` in *ggplot2*. It provides a straightforward way to plot nodes, allowing you to vary their shapes, colors, and sizes. In the code chunks above, the aesthetics applied were color and size.
 
 ## Modifying edges
+
 We will adjust the thickness of the edges mapped with the **Weight** variable
+
 ```{r}
 g <- ggraph(GAStech_graph, 
             layout = "nicely") +
@@ -291,15 +311,17 @@ g + theme_graph()
 The `geom_edge_link()` function draws edges in their simplest form, straight lines connecting the start and end nodes. However, it can also be customised. In the example above, the width argument was mapped to the **Weight** attribute so that line thickness reflects edge strength, while the *alpha* argument was used to adjust line opacity.
 
 # Creating facet graphs
+
 Another powerful feature of `ggraph` is faceting. When visualising network data, faceting helps reduce edge over‑plotting by spreading nodes and edges across panels based on their attributes. This technique makes complex networks easier to interpret and highlights structural differences more clearly. In this section, you will learn how to apply faceting to network visualisations.
 
 `ggraph` provides three functions for implementing faceting:
 
-- **facet_nodes()** → edges are drawn in a panel only if both terminal nodes are present there.
-- **facet_edges()** → nodes are shown in all panels, even when the node data includes an attribute with the same name used for edge faceting.
-- **facet_graph()** → allows faceting on two variables at the same time.
+-   **facet_nodes()** → edges are drawn in a panel only if both terminal nodes are present there.
+-   **facet_edges()** → nodes are shown in all panels, even when the node data includes an attribute with the same name used for edge faceting.
+-   **facet_graph()** → allows faceting on two variables at the same time.
 
 ## Working with facet_edges()
+
 ```{r}
 set_graph_style()
 
@@ -313,7 +335,9 @@ g <- ggraph(GAStech_graph,
 
 g + facet_edges(~Weekday)
 ```
+
 Now, we will use *theme()* to change the position of the legend
+
 ```{r}
 set_graph_style()
 
@@ -328,7 +352,9 @@ g <- ggraph(GAStech_graph,
   
 g + facet_edges(~Weekday)
 ```
+
 # Framed facet_graph()
+
 ```{r}
 set_graph_style() 
 
@@ -345,7 +371,9 @@ g + facet_edges(~Weekday) +
                 border = TRUE) +
   theme(legend.position = 'bottom')
 ```
+
 ## Working with facet_nodes()
+
 ```{r}
 g <- ggraph(GAStech_graph, 
             layout = "nicely") + 
@@ -362,8 +390,11 @@ g + facet_nodes(~Department)+
 ```
 
 # Network metrics analysis
+
 ## Computing centrality indices
+
 Centrality measures are statistical indices used to describe how important individual actors are within a network. Four well‑known measures are: *degree*, *betweenness*, *closeness*, and *eigenvector.*
+
 ```{r}
 g <- GAStech_graph %>%
   mutate(betweenness_centrality = centrality_betweenness()) %>%
@@ -375,10 +406,12 @@ g <- GAStech_graph %>%
             size=betweenness_centrality))
 g + theme_graph()
 ```
+
 In this workflow, the **mutate()** function from dplyr is used to perform the calculation. The actual algorithm applied is **centrality_betweenness()** from tidygraph, which computes the betweenness centrality values for the network
 
 ## Visualising netowork metrics
-Starting with ggraph v2.0, algorithms from tidygraph, such as centrality measures—can be called directly inside ggraph() plots. This means you no longer need to precompute and store derived node or edge attributes (like centrality scores) on the graph before using them in a visualisation
+
+Starting with ggraph v2.0, algorithms from tidygraph, such as centrality measures---can be called directly inside ggraph() plots. This means you no longer need to precompute and store derived node or edge attributes (like centrality scores) on the graph before using them in a visualisation
 
 ```{r}
 g <- GAStech_graph %>%
@@ -392,19 +425,21 @@ g + theme_graph()
 ```
 
 ## Visualising community
+
 The tidygraph package inherits many of the community detection algorithms from igraph and makes them directly available. These include:
 
-- Edge betweenness (group_edge_betweenness)
-- Leading eigenvector (group_leading_eigen)
-- Fast greedy (group_fast_greedy)
-- Louvain (group_louvain)
-- Walktrap (group_walktrap)
-- Label propagation (group_label_prop)
-- InfoMAP (group_infomap)
-- Spinglass (group_spinglass)
-- Optimal (group_optimal)
+-   Edge betweenness (group_edge_betweenness)
+-   Leading eigenvector (group_leading_eigen)
+-   Fast greedy (group_fast_greedy)
+-   Louvain (group_louvain)
+-   Walktrap (group_walktrap)
+-   Label propagation (group_label_prop)
+-   InfoMAP (group_infomap)
+-   Spinglass (group_spinglass)
+-   Optimal (group_optimal)
 
 Some of these algorithms account for direction or weight in the network, while others ignore them. For more details, refer to the documentation on community detection functions in tidygraph.
+
 ```{r}
 g <- GAStech_graph %>%
   mutate(community = as.factor(
@@ -423,7 +458,9 @@ g <- GAStech_graph %>%
 
 g + theme_graph()
 ```
+
 The code chunk below visualises using the *ggforce()* and *concaveman* packages
+
 ```{r}
 g <- GAStech_graph %>%
   activate(nodes) %>%
@@ -451,21 +488,23 @@ g + theme_graph()
 ```
 
 # Building interactive network graph with visNetwork
+
 The `visNetwork` package provides interactive network visualisation, built on the `vis.js` JavaScript library.
 
 The visNetwork() function creates an interactive graph from two inputs: a nodes list and an edges list.
 
-- The nodes list must include an id column, and typically a label column to display actor names.
-- The edges list must include from and to columns to define connections.
+-   The nodes list must include an id column, and typically a label column to display actor names.
+-   The edges list must include from and to columns to define connections.
 
 The resulting graph is highly interactive:
 
-- We can move nodes, and the layout algorithm automatically adjusts spacing.
-- We can zoom in/out and pan to re‑center the view.
+-   We can move nodes, and the layout algorithm automatically adjusts spacing.
+-   We can zoom in/out and pan to re‑center the view.
 
 This makes exploring the network both intuitive and engaging
 
 ## Data preparation
+
 ```{r}
 GAStech_edges_aggregated <- GAStech_edges %>%
   left_join(GAStech_nodes, by = c("sourceLabel" = "label")) %>%
@@ -479,13 +518,16 @@ GAStech_edges_aggregated <- GAStech_edges %>%
   filter(weight > 1) %>%
   ungroup()
 ```
+
 ## Plotting the simplest interactive graph
+
 ```{r}
 visNetwork(GAStech_nodes, 
            GAStech_edges_aggregated)
 ```
 
 ## Working with layout
+
 ```{r}
 visNetwork(GAStech_nodes,
            GAStech_edges_aggregated) %>%
@@ -493,15 +535,18 @@ visNetwork(GAStech_nodes,
 ```
 
 ## Working with visual attributes - Nodes
+
 In `visNetwork`, the function looks for a field named group in the nodes data. Nodes are then coloured automatically according to the values in this field.
 
 In the example code, the Department column was renamed to group so that node colours reflect departmental membership
+
 ```{r}
 GAStech_nodes <- GAStech_nodes %>%
   rename(group = Department) 
 ```
 
 Nodes are shaded automatically when a group field is present in the nodes data. Each category in the group field is assigned a unique colour, making it easy to distinguish different groups visually. In the example code below, this behaviour is demonstrated by mapping categories in the group column to distinct node colours.
+
 ```{r}
 visNetwork(GAStech_nodes,
            GAStech_edges_aggregated) %>%
@@ -511,10 +556,10 @@ visNetwork(GAStech_nodes,
 ```
 
 ## Working with visual attributes - Edges
+
 The `visEdges()` function is used to style and symbolise the edges of the network:
 
--The arrows argument specifies where arrows should be placed along the edges.
-- The smooth argument allows edges to be drawn as curved lines rather than straight, giving the graph a more fluid appearance
+-The arrows argument specifies where arrows should be placed along the edges. - The smooth argument allows edges to be drawn as curved lines rather than straight, giving the graph a more fluid appearance
 
 ```{r}
 visNetwork(GAStech_nodes,
@@ -528,10 +573,11 @@ visNetwork(GAStech_nodes,
 ```
 
 ## Creating an interactive graph
+
 `visOptions()` function in visNetwork adds interactive features to the visualisation.
 
-- The *highlightNearest* argument highlights the nearest nodes when a node is clicked.
-- The *nodesIdSelection* argument creates an HTML select element, allowing users to choose nodes by their ID for quick navigation.
+-   The *highlightNearest* argument highlights the nearest nodes when a node is clicked.
+-   The *nodesIdSelection* argument creates an HTML select element, allowing users to choose nodes by their ID for quick navigation.
 
 ```{r}
 visNetwork(GAStech_nodes,

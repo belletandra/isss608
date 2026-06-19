@@ -1,0 +1,129 @@
+---
+title: "Part B - Visualising Geospatial Point Data"
+author: "Anabelle Eveleen T"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+editor: visual
+date: "2026-06-16"
+date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+---
+
+# Overview
+Proportional symbol maps, sometimes called graduated symbol maps, use size as a visual variable to represent differences in magnitude for discrete phenomena, such as population counts. Similar to choropleth maps, they can be either classed or unclassed. Classed versions are known as range‑graded or graduated symbols, while unclassed versions are called proportional symbols, where the area of each symbol is directly proportional to the mapped attribute values. In this exercise, you’ll learn how to build a proportional symbol map showing the number of wins at Singapore Pools outlets using the tmap package in R.
+
+By completing this exercise, you will gain the following skills with R packages:
+
+- Importing an aspatial dataset into R.
+- Converting it into a simple point feature data frame and assigning an appropriate projection reference.
+- Plotting interactive proportional symbol maps.
+
+# Getting started
+Before beginning, ensure that tmap and its related packages are installed and loaded:
+
+```{r}
+pacman::p_load(sf, tmap, tidyverse)
+```
+
+# Geospatial Data Wrangling
+
+## The data
+The dataset used here is SGPools_svy21, stored in CSV format.
+
+The first 15 records of *SGPools_svy21.csv* show seven columns. The **XCOORD** and **YCOORD** fields represent the coordinates of Singapore Pools outlets and branches, expressed in the Singapore SVY21 Projected Coordinate System.
+
+## Data import and preparation
+The dataset is imported into R as a tibble using read_csv() from the readr package:
+```{r}
+sgpools <- read_csv("../data/SGPools_svy21.csv")
+```
+
+After importing, it’s important to verify the data structure:
+
+```{r}
+list(sgpools)
+```
+Notice that the result is a tibble data frame rather than a standard R data frame
+
+## Creating a sf data frame from an aspatial data frame
+The tibble is converted into a simple feature data frame using st_as_sf() from the sf package:
+```{r}
+sgpools_sf <- st_as_sf(sgpools, 
+                       coords = c("XCOORD", "YCOORD"),
+                       crs= 3414)
+```
+
+**Key points about the arguments:**
+
+- coords → specify the x‑coordinate column first, followed by the y‑coordinate column.
+- crs → provide the coordinate system in EPSG format. Here, EPSG:3414 corresponds to the Singapore SVY21 system. Other EPSG codes can be found at epsg.io.
+
+The resulting data frame includes a new geometry column.
+To inspect the new object:
+```{r}
+list(sgpools_sf)
+```
+The output confirms that *sgpools_sf* is a point feature class, with *EPSG ID 3414*. The bounding box (`bbox`) describes the spatial extent of the dataset.
+
+# Drawing Proportional Symbol Map
+To build an interactive proportional symbol map, switch tmap into interactive mode:
+```{r}
+tmap_mode("view")
+```
+
+## Interactive point symbol map
+The following code creates a basic interactive point symbol map:
+```{r}
+tm_shape(sgpools_sf) + 
+  tm_bubbles(fill = "red",
+           size = 1,
+           col = "black",
+           lwd = 1)
+```
+
+## Proportial symbol map
+To create a proportional symbol map, assign a numeric variable to the size aesthetic. Here, the variable *Gp1Gp2Winnings* is mapped to symbol size:
+```{r}
+tm_shape(sgpools_sf) + 
+  tm_bubbles(fill = "red",
+             size = "Gp1Gp2 Winnings",
+             col = "black",
+             lwd = 1)
+```
+
+## Coloring symbol map
+We can enhance the map further by mapping colour to another variable. In this example, OUTLET_TYPE is used:
+```{r}
+tm_shape(sgpools_sf) + 
+  tm_bubbles(fill = "OUTLET TYPE", 
+             size = "Gp1Gp2 Winnings",
+             col = "black",
+             lwd = 1)
+```
+
+## Plotting multiple symbol map
+A powerful but lesser‑known feature of tmap’s interactive mode is its support for faceted plots. Using the sync argument in `tm_facets()`, you can generate multiple maps with synchronised zoom and pan:
+
+```{r}
+tm_shape(sgpools_sf) + 
+  tm_bubbles(fill = "OUTLET TYPE", 
+             size = "Gp1Gp2 Winnings",
+             col = "black",
+             lwd = 1) + 
+  tm_facets(by= "OUTLET TYPE",
+            nrow = 1,
+            sync = TRUE)
+```
+
+Before ending the session, it’s good practice to switch tmap back to plot mode using this code below:
+
+```{r}
+tmap_mode("plot")
+```
+

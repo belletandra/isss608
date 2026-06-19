@@ -1,0 +1,22 @@
+---
+title: "Hands-On Exercise9"
+format: html
+editor: visual
+author: "Anabelle Eveleen T"
+date: "2026-06-04"
+date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  freeze: true
+---
+
+In this exercise, we will explore methods for **Choropleth Mapping with R**, **Visualising Geospatial Point Data** and **Analytical Mapping**
+
+This exercise is divided into three parts. Use the links below to access each section:
+
+- [Part A, Choropleth Mapping with R](exercise9-part1.qmd)
+- [Part B, Visualising Geospatial Point Data](exercise9-part2.qmd)
+- [Part C, Analytical Mapping](exercise9-part3.qmd)
+

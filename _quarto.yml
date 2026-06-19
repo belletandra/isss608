@@ -25,6 +25,10 @@ website:
             href: handson/exercise7.qmd
           - text: "Exercise 8"
             href: handson/exercise8.qmd
+          - text: "Exercise 9"
+            href: handson/exercise9.qmd
+          - text: "Exercise 10"
+            href: handson/exercise10.qmd
       - text: "In-class"
         menu:
           - text: "Exercise 1"
@@ -38,8 +42,6 @@ website:
             href: takehome/take-home-1.qmd
           - text: "Exercise 2"
             href: takehome/take-home-2.qmd
-          - text: "Exercise 3"
-            href: takehome/take-home-3.qmd
 format:
   html:
     theme: cosmo
