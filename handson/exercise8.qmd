@@ -15,6 +15,7 @@ execute:
   warning: false
   # freeze: true
 ---
+
 # Visualising and Analysing Time-oriented Data
 
 Time-oriented data presents a unique set of challenges for visualization. Unlike standard categorical or numerical data, time-series data must convey patterns, trends, and cycles in a way that is both accurate and easy to interpret. In this hands-on exercise, we explore several visualization methods suited for time-oriented data, including the calendar heatmap, cycle plot, horizon chart and slopegraph
@@ -63,10 +64,10 @@ In this section, we will learn how to plot a calendar heatmap programmatically u
 
 By the end of this section, we will be able to:
 
--   plot a calendar heatmap using `ggplot2` functions and extensions,
--   write a function using R programming,
--   derive specific date and time related fields using base R and `lubridate` packages, and
--   perform data preparation tasks using `tidyr` and `dplyr` packages.
+- plot a calendar heatmap using `ggplot2` functions and extensions,
+- write a function using R programming,
+- derive specific date and time related fields using base R and `lubridate` packages, and
+- perform data preparation tasks using `tidyr` and `dplyr` packages.
 
 ## The Data
 
@@ -90,9 +91,9 @@ kable(head(attacks))
 
 The dataset has three columns: *timestamp*, *source_country*, and *tz*.
 
--   *timestamp* stores date-time values in POSIXct format.
--   *source_country* stores the origin of the attack in ISO 3166-1 alpha-2 country code format.
--   *tz* stores the time zone of the source IP address.
+- *timestamp* stores date-time values in POSIXct format.
+- *source_country* stores the origin of the attack in ISO 3166-1 alpha-2 country code format.
+- *tz* stores the time zone of the source IP address.
 
 ## Data Preparation
 
@@ -114,8 +115,8 @@ make_hr_wkday <- function(ts, sc, tz) {
 
 Note:
 
--   `ymd_hms()` and `hour()` are from the **lubridate** package.
--   `weekdays()` is a base R function.
+- `ymd_hms()` and `hour()` are from the **lubridate** package.
+- `weekdays()` is a base R function.
 
 **Step 2: Deriving the attacks tibble data frame**
 
@@ -206,13 +207,13 @@ theme(axis.ticks = element_blank(),
 
 ### Things to learn from the code chunk:
 
--   A tibble data table called *grouped* is derived by aggregating attacks by *wkday* and *hour* fields.
--   A new field called *n* is derived using `group_by()` and `count()` functions.
--   `na.omit()` is used to exclude missing values.
--   `geom_tile()` plots tiles (grids) at each x and y position. The `color` and `size` arguments specify the border color and line size of the tiles.
--   `theme_tufte()` from the **ggthemes** package removes unnecessary chart junk.
--   `coord_equal()` ensures the plot has an aspect ratio of 1:1.
--   `scale_fill_gradient()` creates a two-color gradient (low to high).
+- A tibble data table called *grouped* is derived by aggregating attacks by *wkday* and *hour* fields.
+- A new field called *n* is derived using `group_by()` and `count()` functions.
+- `na.omit()` is used to exclude missing values.
+- `geom_tile()` plots tiles (grids) at each x and y position. The `color` and `size` arguments specify the border color and line size of the tiles.
+- `theme_tufte()` from the **ggthemes** package removes unnecessary chart junk.
+- `coord_equal()` ensures the plot has an aspect ratio of 1:1.
+- `scale_fill_gradient()` creates a two-color gradient (low to high).
 :::
 
 ## Building Multiple Calendar Heatmaps
