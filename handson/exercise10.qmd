@@ -52,8 +52,6 @@ For this exercise, a personal database in Microsoft Access mdb format called *Co
 
 ## Importing the Database into R
 
-The code chunk below uses `odbcConnectAccess()` of the **RODBC** package to import a database query table into R.
-
 ```{r}
 #| eval: false
 coffeechain <- read_csv("../data/CoffeeChain.csv")
@@ -61,7 +59,7 @@ write_rds(coffeechain, "../data/rds/CoffeeChain.rds")
 ```
 
 ::: callout-note
-Before running the code chunk above, the R system must be switched to the 32-bit version, as `odbcConnectAccess()` is built on 32-bit and is not compatible with 64-bit R.
+Before running the code chunk using ODBC, the R system must be switched to the 32-bit version, as `odbcConnectAccess()` is built on 32-bit and is not compatible with 64-bit R.
 :::
 
 ## Data Preparation
